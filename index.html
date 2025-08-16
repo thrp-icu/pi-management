@@ -1,746 +1,1120 @@
+
+
 <!DOCTYPE html>
-<!-- saved from url=(0044)https://thrp-icu.my.canva.site/pi-management -->
-<html dir="ltr" lang="th-TH" class="theme light EHoceA"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><!--<base href="/pi-management/">--><base href="."><title>PI Management</title><meta name="app-name" content="export_website"><meta name="viewport" content="width=device-width, initial-scale=1"><link href="./PI Management_files/a0684b0780c739e9.vendor(1).ltr.css" rel="stylesheet" integrity="sha512-JwMCpiHdk95MoUTatfaZJwstzeDnWfvWMJiwnSxZfPmgeCe4yvQDQ+ONMQjIy/Ht72r0TmlE+gvZnYRnpdLdVg==" crossorigin="anonymous"><link href="./PI Management_files/bd9e8f0d99b6f761.ltr.css" rel="stylesheet" integrity="sha512-xCbhtkpZJYyUjBMBqVjsV5GZswSHXXZkPaJQfuLrzswDZadd3s2CW2OzGeP78lr+ON74MbI9cfFg3sNgtJkaFQ==" crossorigin="anonymous"><link href="./PI Management_files/static_font_4(1).ltr.css" rel="stylesheet"><link href="./PI Management_files/bc298cffa4d33d43.runtime.js.ดาวน์โหลด" rel="preload" as="script" crossorigin="anonymous" integrity="sha512-6RnE+o1k+ofzqas2LlY7vpn6lI3Um/KSRsHLwsXl33qfqvwl2xL3jCBXip56eX1IcAorrkeIs6jFQOVfFiJdJA==" nonce=""><link href="./PI Management_files/e633f538fad2b752.s4le6a.vendor(1).js.ดาวน์โหลด" rel="preload" as="script" crossorigin="anonymous" integrity="sha512-bZiEERMDe++SiQCZbF/5Ly/YWka9ZvcIElJL1y5HitvWD/TT16drN6IIN5HT0xL8tzy4qoGabJD7XCOGTM+xBQ==" nonce=""><link href="./PI Management_files/6dfedd5eb1e03f64.vendor.js.ดาวน์โหลด" rel="preload" as="script" crossorigin="anonymous" integrity="sha512-2uR6jKOJQbtiI4rLh4sFZ/Yv3a6yX2hFFwgfLvRnow/bCWNKRxfQYk08/kh1gEcG74Y4A4ihbfMoSe9dNxHhoA==" nonce=""><link href="./PI Management_files/8d51e94bb4a36f0b.strings.js.ดาวน์โหลด" rel="preload" as="script" crossorigin="anonymous" integrity="sha512-LDVmCfL4QZih3C1E2QaNBMQ/X++DFEszkGVsH2xI80uSEqDV6Tg4bU3Bv6TlMCgVWlAUspUb/h4yG64l5jAUYw==" nonce=""><link href="./PI Management_files/81fab970efce0947.th-TH.js.ดาวน์โหลด" rel="preload" as="script" crossorigin="anonymous" integrity="sha512-7AZi7OstF1mGYo9fQVAIdJmcthOIRTk9vUtfI0seZmejZ244GlDvJ5F/SunHwPgtpleUnZec1soBZjU7Vp2i5Q==" nonce=""><link href="./PI Management_files/1f09959ee9068430.js.ดาวน์โหลด" rel="preload" as="script" crossorigin="anonymous" integrity="sha512-4ysXm/o8oenkkYRp/YUT/sxg/djhDZHKKcGirN9pkr3pWsg+mLBO+VYVj9nb4Si5pBG79nR11okJE4k7D1A+SQ==" nonce=""><meta name="referrer" content="strict-origin-when-cross-origin"><meta property="og:title" content="PI Management"><meta property="og:type" content="website"><link rel="shortcut icon" href="https://thrp-icu.my.canva.site/pi-management/_assets/images/2d0b56e7e51cf11036ad8734bdb67e2d.png"><link rel="icon" href="https://thrp-icu.my.canva.site/pi-management/_assets/images/e53c4bd8da5e491d9ab09e7cf0daf874.png" sizes="192x192"><link rel="apple-touch-icon" href="https://thrp-icu.my.canva.site/pi-management/_assets/images/725b756a69a7d4c235070e51acd85560.png" sizes="180x180"><script nonce="">
-      document.addEventListener('contextmenu', (e) => {
-        const isMedia = ['img', 'image', 'video', 'svg', 'picture'].some(
-          tagName => tagName.localeCompare(e.target.tagName, undefined, { sensitivity: 'base' }) === 0,
-        );
-        isMedia && e.preventDefault();
-      });
-    </script><script nonce="">
-  const lang = navigator.language ? navigator.language : 'en';
-  window.canva_installFooter = (container) => {
-    if (!(container instanceof HTMLDivElement)) {
-      return;
-    }
-    fetch('_footer?lang=' + encodeURIComponent(lang)).then(response => {
-      if (response.status !== 200) {
-        return;
-      }
-      response.text().then(footerStr => {
-        container.innerHTML = '';
-        const div = document.createElement('div');
-        div.innerHTML = footerStr;
-        for (const child of [...div.children]) {
-          if (child.tagName.toLowerCase() !== 'script') {
-            container.append(child);
-          }
-        }
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICU PI Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Sarabun', sans-serif; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-teal-50 to-cyan-100 min-h-screen">
+    <div class="container mx-auto px-4 py-6">
+        <!-- Header -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <div class="flex items-center justify-center mb-4">
+                <div class="flex flex-col items-center mr-4">
+                    <div class="bg-gradient-to-br from-teal-500 to-teal-600 rounded-full p-4 shadow-lg">
+                        <svg class="w-16 h-16" fill="none" viewBox="0 0 24 24">
+                            <!-- First bandage - diagonal from top-left to bottom-right -->
+                            <g transform="rotate(45 12 12)">
+                                <rect x="2" y="9" width="20" height="6" rx="3" ry="3" fill="#F5DEB3" stroke="#D2B48C" stroke-width="0.4"/>
+                                <!-- Adhesive texture dots -->
+                                <circle cx="4" cy="10.5" r="0.2" fill="#D2B48C" opacity="0.6"/>
+                                <circle cx="6" cy="10.5" r="0.2" fill="#D2B48C" opacity="0.6"/>
+                                <circle cx="8" cy="10.5" r="0.2" fill="#D2B48C" opacity="0.6"/>
+                                <circle cx="4" cy="12" r="0.2" fill="#D2B48C" opacity="0.6"/>
+                                <circle cx="6" cy="12" r="0.2" fill="#D2B48C" opacity="0.6"/>
+                                <circle cx="8" cy="12" r="0.2" fill="#D2B48C" opacity="0.6"/>
+                                <circle cx="4" cy="13.5" r="0.2" fill="#D2B48C" opacity="0.6"/>
+                                <circle cx="6" cy="13.5" r="0.2" fill="#D2B48C" opacity="0.6"/>
+                                <circle cx="8" cy="13.5" r="0.2" fill="#D2B48C" opacity="0.6"/>
+                                
+                                <circle cx="16" cy="10.5" r="0.2" fill="#D2B48C" opacity="0.6"/>
+                                <circle cx="18" cy="10.5" r="0.2" fill="#D2B48C" opacity="0.6"/>
+                                <circle cx="20" cy="10.5" r="0.2" fill="#D2B48C" opacity="0.6"/>
+                                <circle cx="16" cy="12" r="0.2" fill="#D2B48C" opacity="0.6"/>
+                                <circle cx="18" cy="12" r="0.2" fill="#D2B48C" opacity="0.6"/>
+                                <circle cx="20" cy="12" r="0.2" fill="#D2B48C" opacity="0.6"/>
+                                <circle cx="16" cy="13.5" r="0.2" fill="#D2B48C" opacity="0.6"/>
+                                <circle cx="18" cy="13.5" r="0.2" fill="#D2B48C" opacity="0.6"/>
+                                <circle cx="20" cy="13.5" r="0.2" fill="#D2B48C" opacity="0.6"/>
+                                
+                                <!-- Center gauze pad -->
+                                <rect x="9.5" y="10" width="5" height="4" rx="1" ry="1" fill="#FAEBD7" stroke="#D2B48C" stroke-width="0.3" opacity="0.9"/>
+                            </g>
+                            
+                            <!-- Second bandage - diagonal from top-right to bottom-left -->
+                            <g transform="rotate(-45 12 12)">
+                                <rect x="2" y="9" width="20" height="6" rx="3" ry="3" fill="#F5DEB3" stroke="#D2B48C" stroke-width="0.4"/>
+                                <!-- Adhesive texture dots -->
+                                <circle cx="4" cy="10.5" r="0.2" fill="#D2B48C" opacity="0.6"/>
+                                <circle cx="6" cy="10.5" r="0.2" fill="#D2B48C" opacity="0.6"/>
+                                <circle cx="8" cy="10.5" r="0.2" fill="#D2B48C" opacity="0.6"/>
+                                <circle cx="4" cy="12" r="0.2" fill="#D2B48C" opacity="0.6"/>
+                                <circle cx="6" cy="12" r="0.2" fill="#D2B48C" opacity="0.6"/>
+                                <circle cx="8" cy="12" r="0.2" fill="#D2B48C" opacity="0.6"/>
+                                <circle cx="4" cy="13.5" r="0.2" fill="#D2B48C" opacity="0.6"/>
+                                <circle cx="6" cy="13.5" r="0.2" fill="#D2B48C" opacity="0.6"/>
+                                <circle cx="8" cy="13.5" r="0.2" fill="#D2B48C" opacity="0.6"/>
+                                
+                                <circle cx="16" cy="10.5" r="0.2" fill="#D2B48C" opacity="0.6"/>
+                                <circle cx="18" cy="10.5" r="0.2" fill="#D2B48C" opacity="0.6"/>
+                                <circle cx="20" cy="10.5" r="0.2" fill="#D2B48C" opacity="0.6"/>
+                                <circle cx="16" cy="12" r="0.2" fill="#D2B48C" opacity="0.6"/>
+                                <circle cx="18" cy="12" r="0.2" fill="#D2B48C" opacity="0.6"/>
+                                <circle cx="20" cy="12" r="0.2" fill="#D2B48C" opacity="0.6"/>
+                                <circle cx="16" cy="13.5" r="0.2" fill="#D2B48C" opacity="0.6"/>
+                                <circle cx="18" cy="13.5" r="0.2" fill="#D2B48C" opacity="0.6"/>
+                                <circle cx="20" cy="13.5" r="0.2" fill="#D2B48C" opacity="0.6"/>
+                                
+                                <!-- Center gauze pad -->
+                                <rect x="9.5" y="10" width="5" height="4" rx="1" ry="1" fill="#FAEBD7" stroke="#D2B48C" stroke-width="0.3" opacity="0.9"/>
+                            </g>
+                            
 
-        (() => { !function(e){"use strict";const t=document.getElementById("modal_backdrop"),o=document.getElementById("modal"),n=document.getElementById("report_button"),c=document.getElementById("form_report"),s=document.getElementById("form_cancel"),d=document.getElementById("form_submit_reason"),l=document.getElementById("form_close"),r=document.getElementById("form_close_initial"),m=document.getElementById("report_reason_0");var i;!function(e){e[e.TERMS=0]="TERMS",e[e.REPORT=1]="REPORT",e[e.SUCCESS=2]="SUCCESS",e[e.REPORT_OTHER=3]="REPORT_OTHER",e[e.REPORT_IP=4]="REPORT_IP"}(i||(i={}));const a=new Map;a.set(i.TERMS,document.getElementById("form_step_terms")),a.set(i.REPORT,document.getElementById("form_step_report_reason")),a.set(i.REPORT_OTHER,document.getElementById("form_step_report_other"));const u=document.getElementById("form_step_report_ip");u&&a.set(i.REPORT_IP,u),a.set(i.SUCCESS,document.getElementById("form_step_success"));const E=document.getElementById("report_reason_4"),_=document.getElementById("form_close_ip"),p=document.getElementById("form_go_back_ip"),R=document.getElementById("report_reason_other"),f=document.getElementById("form_close_other"),y=document.getElementById("form_go_back_other");function g(){t.classList.remove("active"),o.classList.remove("active"),n.classList.remove("active"),n.focus()}function T(e){a.forEach(((t,o)=>{o===e?(t.style.display="block",h(t)):t.style.display="none"}))}function k(){const e={reason:function(){let e="";const t=document.getElementsByName("report_reason");for(let o=0;o<t.length;o++){const n=t[o];n.checked&&(e=n.value)}return e}()},t=window.location.origin+window.location.pathname+"/_api/report";d.classList.add("loading"),fetch(t,{method:"POST",body:JSON.stringify(e),headers:{"Content-Type":"application/json; charset=utf-8"}}).then((e=>{d.classList.remove("loading"),e.ok&&T(i.SUCCESS)}))}t.onclick=g,s.onclick=g,l.onclick=g,r.onclick=g,_&&(_.onclick=g),f.onclick=g,n.onclick=function(){a.forEach(((e,t)=>{e.style.display=t===i.TERMS?"block":"none"})),t.classList.add("active"),o.classList.add("active"),n.classList.add("active"),m.checked=!0,setTimeout((()=>{h(a.get(i.TERMS))}),350)},c.onclick=c.dataset.reportUrl?function(){const{origin:e,pathname:t}=window.location,o=e+t,n=c.dataset.reportUrl+encodeURIComponent(o);window.open(n)}:()=>T(i.REPORT),d.onclick=()=>{null!=u&&E.checked?T(i.REPORT_IP):R.checked?T(i.REPORT_OTHER):k()},p&&(p.onclick=()=>T(i.REPORT)),y.onclick=()=>T(i.REPORT);const I=new Map,h=e=>{const t=I.get(e);null!=t&&document.removeEventListener("keydown",t);const o=e.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'),n=e,c=o[o.length-1],s=function(e){("Tab"===e.key||9===e.keyCode)&&(e.shiftKey?document.activeElement===n&&(c.focus(),e.preventDefault()):document.activeElement===c&&(n.focus(),e.preventDefault()))};I.set(e,s),document.addEventListener("keydown",s),n.focus()};e.keepFocus=h}({}); })();
-      });
-    });
-  }
-</script><script nonce="">
-    window.C_CAPTCHA_IMPLEMENTATION = 'RECAPTCHA';
-</script><script nonce="">
-    window.C_CAPTCHA_KEY = '6LdpNmIrAAAAAHQVezN3pBAfDjQQ2qUpo881f24o';
-</script><style type="text/css"></style><link rel="stylesheet" type="text/css" href="./PI Management_files/b5de2817a09dae0e(1).ltr.css"><style type="text/css"></style><link rel="stylesheet" type="text/css" href="./PI Management_files/425a19db31a8738a.ltr.css"></head><body><script nonce="">document.documentElement.classList.replace('adaptive', window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');</script><div id="root"><div class="yIDCqA"><main class="_8OlyIw"><div class="_4KoDHA"><div class="ZRRuDw"><div style="height: 100%; width: 100%;"><div class="KYQZFA"><section id="PBYQ9bk1H4KYgLFV" class="rGeu6w" data-scroll-ready="true" style="background-color: rgb(255, 255, 255);"><div><div class="onhyOQ" style="width: 1521px; height: 768px; align-items: center;"><div class="twbtjQ"><div class="GDnEHQ" style="width: 1521px; height: 768px; background-color: rgb(255, 255, 255);"><div class="o2Yl2g"><div class="_mXnjA" lang="th-TH" style="width: 1521px; height: 768px;"><div class="_6t4CHA"><div class="a26Xuw"><div class="fbzKiw" style="background: rgb(255, 255, 255);"></div></div></div><div style="position: absolute; top: 76.8px; left: 76.8px; width: 1367.4px; height: 614.4px;"></div><div class="DF_utQ _682gpw _0xkaeQ" style="touch-action: pan-x pan-y pinch-zoom; width: 1521px; height: 768px; transform: translate(0px, 0px);"><div style="width: 1521px; height: 768px; transform: scale(1, 1); transform-origin: 0px 0px;"><div class="hVT_uA PgAXEw"><div class="Rt1H_w"><div class="IwXXkw _qImYg JbJFjg _CObZw"></div><div class="_5sVuA"><span aria-hidden="true" class="NA_Img dkWypw _6ti9_A"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24"><defs><path id="_265464792__a" d="M4 21A9 9 0 0 0 4 3a1 1 0 1 0 0 2 7 7 0 1 1 0 14 1 1 0 0 0 0 2z"></path></defs><use fill="currentColor" fill-rule="nonzero" transform="matrix(-1 0 0 1 16 0)" xlink:href="#_265464792__a"></use></svg></span></div></div></div><div class="S3wQqg lKZixA _8YzbFQ"><div class="uqhtBg"><iframe src="./PI Management_files/_website-element-widget.html" width="1366" height="768" frameborder="0" sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-popups-to-escape-sandbox" style="width:100%;height:100%;border:0" title="คอนเทนต์แบบฝัง"></iframe></div></div></div></div></div></div></div><div class="QhExXw pKfnlA" style="width: 1521px; height: 768px; margin: 0px;"></div></div></div></div></section></div><div><style>
-    .footer-overflow-container {
-        display: flex;
-        background-color: #000000;
-        position: relative;
-    }
+                        </svg>
+                    </div>
+                </div>
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-800">ICU PI Management</h1>
+                    <p class="text-gray-600">Braden Score Assessment & Pressure Ulcer Management</p>
+                </div>
+            </div>
+        </div>
 
-    .footer-container {
-        flex-grow: 1;
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 6px;
-    }
+        <!-- Assessment Form -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                <svg class="w-6 h-6 mr-2 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                </svg>
+                ข้อมูลผู้ป่วย
+            </h2>
+            <form id="assessmentForm" class="space-y-4">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">HN</label>
+                        <input type="text" id="hn" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">เตียงที่</label>
+                        <select id="bedNumber" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            <option value="">เลือกเตียง</option>
+                            <option value="1">เตียง 1</option>
+                            <option value="2">เตียง 2</option>
+                            <option value="3">เตียง 3</option>
+                            <option value="4">เตียง 4</option>
+                            <option value="5">เตียง 5</option>
+                            <option value="6">เตียง 6</option>
+                            <option value="7">เตียง 7</option>
+                            <option value="8">เตียง 8</option>
+                            <option value="9">เตียง 9</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">อายุ</label>
+                        <input type="number" id="age" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                </div>
 
-    .footer-pill-link {
-        appearance: none;
-        text-decoration: none;
-    }
+                <!-- Admission Information -->
+                <div class="bg-blue-50 rounded-lg p-4 mb-4 shadow-sm">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3a2 2 0 012-2h4a2 2 0 012 2v4m-6 0V6a2 2 0 012-2h4a2 2 0 012 2v1m-6 0h8m-9 0a1 1 0 00-1 1v10a1 1 0 001 1h10a1 1 0 001-1V8a1 1 0 00-1-1H7z"></path>
+                        </svg>
+                        ข้อมูลการรับผู้ป่วย
+                    </h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">วันที่รับใหม่/รับย้าย</label>
+                            <input type="date" id="admissionDate" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">ประเภทการรับ</label>
+                            <select id="admissionSource" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                <option value="">เลือกประเภท</option>
+                                <option value="new_admission">รับใหม่</option>
+                                <option value="transfer">รับย้าย</option>
+                                <option value="refer">รับ Refer</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">รายละเอียดเพิ่มเติม</label>
+                            <input type="text" id="admissionDetails" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="เช่น หอผู้ป่วยศัลยกรรม, ICU 2">
+                        </div>
+                    </div>
+                    
+                    <div class="mt-3">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">สภาพแผลกดทับเมื่อรับ (ถ้ามี)</label>
+                        <textarea id="admissionWoundStatus" rows="2" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="เช่น มีแผลกดทับ Stage 2 ที่ sacrum ขนาด 3x2 cm จากที่บ้าน"></textarea>
+                    </div>
+                </div>
 
-    .footer-pill {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        border-radius: 1000px;
-        border: none;
-        background: none;
-        padding: 4px 8px;
-        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
-        white-space: nowrap;
-        text-decoration: none;
-        font-weight: 600;
-        font-style: normal;
-        font-size: calc(12px * var(--rfso, var(--bfso, 1)));
-        color: #ffffff;
-        transition: background-color 0.2s;
-    }
-    .footer-pill:hover {
-        cursor: pointer;
-    }
-    .footer-pill + .footer-pill {
-        margin-left: 8px;
-    }
+                <!-- Braden Score Assessment -->
+                <div class="bg-teal-50 rounded-lg p-4 mb-4 shadow-sm">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+                        </svg>
+                        การประเมิน Braden Score
+                    </h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">1. การรับรู้</label>
+                            <select id="sensoryPerception" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" onchange="calculateBradenScore()">
+                                <option value="">เลือก</option>
+                                <option value="1">1 - ไม่รู้สึกตัว/ไม่ตอบสนอง</option>
+                                <option value="2">2 - มี pain stimulate/ได้รับยาสลบ/sedative</option>
+                                <option value="3">3 - สับสนสื่อสารไม่ได้ทุกครั้ง</option>
+                                <option value="4">4 - ปกติ</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">2. การเปียกชุ่ม</label>
+                            <select id="moisture" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" onchange="calculateBradenScore()">
+                                <option value="">เลือก</option>
+                                <option value="1">1 - เปียกชุ่มตลอดเวลา(เหงื่อ/ปัสสาวะ)</option>
+                                <option value="2">2 - ผิวหนังเปียกชุ่มบ่อยครั้ง เปลี่ยนผ้าอย่างน้อย 1 ครั้ง/เวร</option>
+                                <option value="3">3 - ผิวหนังเปียกชุ่มบางครั้ง เปลี่ยนผ้าอย่างน้อย 1 ครั้ง/วัน</option>
+                                <option value="4">4 - ปกติ</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">3. การทำกิจกรรม</label>
+                            <select id="activity" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" onchange="calculateBradenScore()">
+                                <option value="">เลือก</option>
+                                <option value="1">1 - อยู่บนเตียงตลอดเวลา/ดึง traction</option>
+                                <option value="2">2 - ไม่สามารถเดินได้เอง</option>
+                                <option value="3">3 - เดินได้ในระยะทางสั้นๆ</option>
+                                <option value="4">4 - ปกติ</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">4. การเคลื่อนไหว</label>
+                            <select id="mobility" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" onchange="calculateBradenScore()">
+                                <option value="">เลือก</option>
+                                <option value="1">1 - เปลี่ยนท่าเองไม่ได้</option>
+                                <option value="2">2 - เปลี่ยนท่าเองได้น้อย/ไม่สามารถทำได้บ่อย</option>
+                                <option value="3">3 - เปลี่ยนท่าเองได้บ่อย</option>
+                                <option value="4">4 - ปกติ</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">5. ภาวะโภชนาการ</label>
+                            <select id="nutrition" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" onchange="calculateBradenScore()">
+                                <option value="">เลือก</option>
+                                <option value="1">1 - NPO /กินได้ 1/3 ถาด</option>
+                                <option value="2">2 - Feed ได้บ้าง/กินได้ 1/2 ถาด</option>
+                                <option value="3">3 - Feed ได้หมด/กินได้มากกว่า 1/2ถาด</option>
+                                <option value="4">4 - ปกติ</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">6. การเสียดสี</label>
+                            <select id="friction" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" onchange="calculateBradenScore()">
+                                <option value="">เลือก</option>
+                                <option value="1">1 - เคลื่อนไหวเองไม่ได้/ข้อกล้ามเนื้อหดเกร็ง ดึง traction</option>
+                                <option value="2">2 - ทรงตัวได้เมื่ออยู่บนเตียงหรือเก้าอี้ แต่บางครั้งอาจลื่นไถลลงมา</option>
+                                <option value="3">3 - ไม่มีปัญหา</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 p-3 bg-white rounded-lg border-2 border-teal-200 shadow-sm">
+                        <div class="flex items-center justify-between">
+                            <span class="text-lg font-semibold text-gray-800">คะแนน Braden Score รวม:</span>
+                            <span id="totalBradenScore" class="text-2xl font-bold text-teal-600">0</span>
+                        </div>
+                        <div id="riskLevel" class="text-sm mt-1 font-medium"></div>
+                    </div>
+                </div>
 
-    .footer-pill-primary {
-        position: relative;
-        z-index: 1;
-        background-color: rgba(255, 255, 255, 0.1);
-    }
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">สถานะแผลกดทับ</label>
+                        <select id="ulcerStatus" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            <option value="none">ไม่มีแผลกดทับ</option>
+                            <option value="stage1">Stage 1</option>
+                            <option value="stage2">Stage 2</option>
+                            <option value="stage3">Stage 3</option>
+                            <option value="stage4">Stage 4</option>
+                            <option value="unstageable">Unstageable</option>
+                            <option value="dtpi">Deep Tissue Pressure Injury</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">ตำแหน่งแผล (ถ้ามี)</label>
+                        <input type="text" id="ulcerLocation" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="เช่น sacrum, heel">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">วันที่บันทึก</label>
+                        <input type="date" id="recordDate" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                </div>
 
-    .footer-pill-primary:hover > .footer-pill-primary-background {
-        opacity: 1;
-    }
+                <!-- Hidden Braden Score field for form submission -->
+                <input type="hidden" id="bradenScore" required>
 
-    .footer-pill-primary-background {
-        position: absolute;
-        z-index: -1;
-        border-radius: 1000px;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, #00C4CC 0%, #7D2AE8 100%);
-        opacity: 0;
-        overflow: hidden;
-        transition: opacity 0.2s;
-    }
 
-    /* Subtle wipe effect */
-    .footer-pill-primary-background::after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        left: 0;
-        top: 0;
-        background: linear-gradient(to right, rgba(125, 42, 232, 0) 0%, #1a1a1a calc(50px + 20%), #1a1a1a 100%);
-        transform: translateX(0);
-        transition: transform 0.7s;
-    }
-    .footer-pill-primary:hover > .footer-pill-primary-background::after {
-        transform: translateX(110%);
-    }
 
-    .footer-pill-primary-background > svg {
-        position: absolute;
-        top: 50%;
-        left: 0;
-        right: 0;
-        transform-origin: center;
-        transform: translateY(-50%);
-        width: 100%;
-    }
+                <div class="flex justify-end space-x-3">
+                    <button type="button" id="clearAssessment" class="px-4 py-2 bg-yellow-500 text-white rounded-md hover:bg-yellow-600 transition-colors">ล้างการประเมิน</button>
+                    <button type="button" id="clearForm" class="px-4 py-2 bg-gray-500 text-white rounded-md hover:bg-gray-600 transition-colors">ล้างทั้งหมด</button>
+                    <button type="submit" class="px-6 py-2 bg-teal-600 text-white rounded-md hover:bg-teal-700 transition-colors shadow-md">บันทึกข้อมูล</button>
+                </div>
+            </form>
+        </div>
 
-    .animation-container {
-        animation: spin linear 12s infinite;
-        animation-play-state: paused;
-    }
-    .footer-pill-primary:hover > .footer-pill-primary-background .animation-container {
-        animation-play-state: running;
-    }
+        <!-- Bed Layout -->
+        <div class="bg-white rounded-lg shadow-lg p-4 mb-6">
+            <h2 class="text-lg font-semibold text-gray-800 mb-4">แผนผังเตียง ICU (9 เตียง)</h2>
+            <div class="grid grid-cols-3 gap-4 max-w-2xl mx-auto">
+                <!-- Row 1 -->
+                <div class="bed-card bg-gray-100 border-2 border-gray-300 rounded-lg p-4 cursor-pointer hover:shadow-md transition-all" data-bed="1">
+                    <div class="text-center">
+                        <div class="text-lg font-semibold">เตียง 1</div>
+                        <div class="bed-status text-sm mt-2">ไม่มีข้อมูล</div>
+                        <div class="bed-info text-sm mt-2 text-gray-600"></div>
+                    </div>
+                </div>
+                <div class="bed-card bg-gray-100 border-2 border-gray-300 rounded-lg p-4 cursor-pointer hover:shadow-md transition-all" data-bed="2">
+                    <div class="text-center">
+                        <div class="text-lg font-semibold">เตียง 2</div>
+                        <div class="bed-status text-sm mt-2">ไม่มีข้อมูล</div>
+                        <div class="bed-info text-sm mt-2 text-gray-600"></div>
+                    </div>
+                </div>
+                <div class="bed-card bg-gray-100 border-2 border-gray-300 rounded-lg p-4 cursor-pointer hover:shadow-md transition-all" data-bed="3">
+                    <div class="text-center">
+                        <div class="text-lg font-semibold">เตียง 3</div>
+                        <div class="bed-status text-sm mt-2">ไม่มีข้อมูล</div>
+                        <div class="bed-info text-sm mt-2 text-gray-600"></div>
+                    </div>
+                </div>
+                <!-- Row 2 -->
+                <div class="bed-card bg-gray-100 border-2 border-gray-300 rounded-lg p-4 cursor-pointer hover:shadow-md transition-all" data-bed="4">
+                    <div class="text-center">
+                        <div class="text-lg font-semibold">เตียง 4</div>
+                        <div class="bed-status text-sm mt-2">ไม่มีข้อมูล</div>
+                        <div class="bed-info text-sm mt-2 text-gray-600"></div>
+                    </div>
+                </div>
+                <div class="bed-card bg-gray-100 border-2 border-gray-300 rounded-lg p-4 cursor-pointer hover:shadow-md transition-all" data-bed="5">
+                    <div class="text-center">
+                        <div class="text-lg font-semibold">เตียง 5</div>
+                        <div class="bed-status text-sm mt-2">ไม่มีข้อมูล</div>
+                        <div class="bed-info text-sm mt-2 text-gray-600"></div>
+                    </div>
+                </div>
+                <div class="bed-card bg-gray-100 border-2 border-gray-300 rounded-lg p-4 cursor-pointer hover:shadow-md transition-all" data-bed="6">
+                    <div class="text-center">
+                        <div class="text-lg font-semibold">เตียง 6</div>
+                        <div class="bed-status text-sm mt-2">ไม่มีข้อมูล</div>
+                        <div class="bed-info text-sm mt-2 text-gray-600"></div>
+                    </div>
+                </div>
+                <!-- Row 3 -->
+                <div class="bed-card bg-gray-100 border-2 border-gray-300 rounded-lg p-4 cursor-pointer hover:shadow-md transition-all" data-bed="7">
+                    <div class="text-center">
+                        <div class="text-lg font-semibold">เตียง 7</div>
+                        <div class="bed-status text-sm mt-2">ไม่มีข้อมูล</div>
+                        <div class="bed-info text-sm mt-2 text-gray-600"></div>
+                    </div>
+                </div>
+                <div class="bed-card bg-gray-100 border-2 border-gray-300 rounded-lg p-4 cursor-pointer hover:shadow-md transition-all" data-bed="8">
+                    <div class="text-center">
+                        <div class="text-lg font-semibold">เตียง 8</div>
+                        <div class="bed-status text-sm mt-2">ไม่มีข้อมูล</div>
+                        <div class="bed-info text-sm mt-2 text-gray-600"></div>
+                    </div>
+                </div>
+                <div class="bed-card bg-gray-100 border-2 border-gray-300 rounded-lg p-4 cursor-pointer hover:shadow-md transition-all" data-bed="9">
+                    <div class="text-center">
+                        <div class="text-lg font-semibold">เตียง 9</div>
+                        <div class="bed-status text-sm mt-2">ไม่มีข้อมูล</div>
+                        <div class="bed-info text-sm mt-2 text-gray-600"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Legend -->
+            <div class="mt-4 flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-4 text-xs">
+                <div class="flex items-center justify-center">
+                    <div class="w-3 h-3 bg-green-400 rounded mr-1"></div>
+                    <span>ความเสี่ยงต่ำ (18-23)</span>
+                </div>
+                <div class="flex items-center justify-center">
+                    <div class="w-3 h-3 bg-yellow-400 rounded mr-1"></div>
+                    <span>ความเสี่ยงสูง (≤17)</span>
+                </div>
+                <div class="flex items-center justify-center">
+                    <div class="w-3 h-3 bg-red-400 rounded mr-1"></div>
+                    <span>มีแผลกดทับ</span>
+                </div>
+            </div>
+        </div>
 
-    .footer-pill-secondary {
-        background-color: rgba(255, 255, 255, 0);
-    }
-    .footer-pill-secondary:hover {
-        background-color: rgba(255, 255, 255, 0.1);
-    }
-    .footer-pill-secondary:active, .footer-pill-secondary.active {
-        background-color: rgba(255, 255, 255, 0.15)
-    }
 
-    .inline-icon {
-        display: inline-block;
-        width: 16px;
-        height: 16px;
-        margin-right: 5px;
-    }
-    .inline-icon > svg {
-        fill: rgba(218, 218, 218, 1);
-    }
 
-    .inline-icon-logo {
-        display: inline-block;
-        height: 15px;
-        margin-left: 5px;
-    }
-    .inline-icon-logo > svg {
-        height: 100%;
-    }
+        <!-- Statistics Dashboard -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-semibold text-gray-800 flex items-center">
+                    <svg class="w-6 h-6 mr-2 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                    </svg>
+                    สถิติและรายงาน
+                </h2>
+                <div class="flex space-x-2">
+                    <button id="viewRecordsBtn" class="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors">
+                        <svg class="w-4 h-4 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                        ดูประวัติการบันทึก
+                    </button>
+                    <button id="exportDataBtn" class="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition-colors">
+                        <svg class="w-4 h-4 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                        ส่งออกข้อมูล
+                    </button>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="bg-teal-50 rounded-lg p-4 text-center shadow-sm">
+                    <div class="text-2xl font-bold text-teal-600" id="totalPatients">0</div>
+                    <div class="text-sm text-gray-600">ผู้ป่วยทั้งหมด</div>
+                </div>
+                <div class="bg-red-50 rounded-lg p-4 text-center">
+                    <div class="text-2xl font-bold text-red-600" id="patientsWithUlcers">0</div>
+                    <div class="text-sm text-gray-600">มีแผลกดทับ</div>
+                </div>
+                <div class="bg-yellow-50 rounded-lg p-4 text-center">
+                    <div class="text-2xl font-bold text-yellow-600" id="highRiskPatients">0</div>
+                    <div class="text-sm text-gray-600">ความเสี่ยงสูง</div>
+                </div>
+                <div class="bg-green-50 rounded-lg p-4 text-center">
+                    <div class="text-2xl font-bold text-green-600" id="lowRiskPatients">0</div>
+                    <div class="text-sm text-gray-600">ความเสี่ยงต่ำ</div>
+                </div>
+            </div>
+            
+            <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-gray-50 rounded-lg p-4">
+                    <h3 class="font-semibold text-gray-800 mb-2">อัตราการเกิดแผลกดทับ</h3>
+                    <div class="text-3xl font-bold text-red-600" id="ulcerRate">0%</div>
+                    <div class="text-sm text-gray-600">จากผู้ป่วยทั้งหมด</div>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-4">
+                    <h3 class="font-semibold text-gray-800 mb-2">คะแนน Braden เฉลี่ย</h3>
+                    <div class="text-3xl font-bold text-teal-600" id="avgBradenScore">0</div>
+                    <div class="text-sm text-gray-600">คะแนนเฉลี่ยของผู้ป่วยทั้งหมด</div>
+                </div>
+            </div>
+        </div>
 
-    .modal-backdrop {
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 9999;
-        transition: opacity 0.35s, visibility 0.35s;
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-    }
-    .modal-backdrop.active {
-        opacity: 1;
-        visibility: visible;
-        pointer-events: all;
-    }
+        <!-- Care Guidelines -->
+        <div id="careGuidelines" class="bg-white rounded-lg shadow-lg p-6 mt-6 hidden">
+            <h2 class="text-xl font-semibold text-gray-800 mb-4">แนวทางการพยาบาล</h2>
+            <div id="guidelinesContent"></div>
+        </div>
+    </div>
 
-    .report-form-modal {
-        display: block;
-        box-sizing: border-box;
-        position: absolute;
-        top: 0;
-        left: 6px;
-        width: 367px;
-        transform: translate3d(0, calc(-100% + 24px), 0);
-        z-index: 10000;
-        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
-        background-color: #ffffff;
-        border-radius: 8px;
-        margin: 0;
-        box-shadow: 0px 2px 18px 0px rgba(14, 19, 24, 0.25), 0px 0px 1px 0px rgba(14, 19, 24, 0.02);
-        transition-duration: 0.35s;
-        transition-property: opacity, transform, visibility;
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-    }
-    .report-form-modal.active {
-        transform: translate3d(0, calc(-100% + 8px), 0);
-        opacity: 1;
-        visibility: visible;
-        pointer-events: all;
-    }
+    <!-- Modal for bed details -->
+    <div id="bedModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-lg p-6 max-w-md w-full mx-4">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-lg font-semibold" id="modalTitle">รายละเอียดเตียง</h3>
+                <button id="closeModal" class="text-gray-500 hover:text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div id="modalContent"></div>
+        </div>
+    </div>
 
-    .form-content {
-        margin: 32px;
-        outline-offset: 34px;
-    }
+    <!-- Modal for records history -->
+    <div id="recordsModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-lg p-6 max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-semibold text-gray-800">ประวัติการบันทึกข้อมูล</h3>
+                <button id="closeRecordsModal" class="text-gray-500 hover:text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div id="recordsContent">
+                <div class="text-center text-gray-500 py-8">ไม่มีข้อมูลการบันทึก</div>
+            </div>
+        </div>
+    </div>
 
-    .form-content > * {
-        margin: 16px 0;
-    }
+    <script>
+        // Data storage
+        let bedData = {};
+        let patientData = {}; // เก็บข้อมูลผู้ป่วยตาม HN
+        let recordsHistory = []; // เก็บประวัติการบันทึกทั้งหมด
 
-    .form-title {
-        font-size: calc(24px * var(--rfso, var(--bfso, 1)));
-        font-weight: 700;
-    }
+        // Set default date to today
+        document.getElementById('recordDate').value = new Date().toISOString().split('T')[0];
+        document.getElementById('admissionDate').value = new Date().toISOString().split('T')[0];
 
-    .form-body {
-        font-size: calc(14px * var(--rfso, var(--bfso, 1)));
-        font-weight: 400;
-        color: rgba(14, 19, 24, 0.7);
-    }
-
-    .form-body-bold {
-        font-size: calc(14px * var(--rfso, var(--bfso, 1)));
-        font-weight: 600;
-        line-height: 22.4px;
-        color: rgba(14, 19, 24, 1);
-    }
-
-    .form-radio-input {
-        display: grid;
-        grid-template-columns: 24px auto;
-        grid-template-rows: auto;
-        grid-template-areas:
-          "radio-button radio-label"
-          ". radio-description"
-    }
-    .form-radio-input:hover {
-        cursor: pointer;
-    }
-
-    .radio-button-input {
-        opacity: 0;
-        margin: 0;
-        width: 0;
-        height: 0;
-    }
-
-    .radio-button {
-        align-self: flex-start;
-        grid-area: radio-button;
-        display: inline-block;
-        width: 16px;
-        height: 16px;
-        margin: 4px 8px 0 0;
-        vertical-align: middle;
-        border-radius: 50%;
-        box-shadow: inset 0 0 0 1px rgba(53, 71, 90, .2);
-        outline: none;
-        background-color: #ffffff;
-        flex-shrink: 0;
-    }
-    .radio-button-input:checked + .radio-button {
-        background: #fff;
-        box-shadow: inset 0 0 0 5px #8b3dff;
-        transition: box-shadow .1s ease-in-out, background-color .1s ease-in-out;
-    }
-    .form-radio-input:hover .radio-button-input:not(:checked) + .radio-button {
-        box-shadow: inset 0 0 0 1px rgba(30, 41, 51, .45);
-    }
-
-    .radio-button-input + .radio-button::after {
-        content: "";
-        width: 6px;
-        height: 6px;
-        background-color: transparent;
-        display: block;
-        margin: 5px;
-        border-radius: 50%;
-    }
-    .radio-button-input:checked + .radio-button::after {
-        background-color: #ffffff;
-        transition: background-color .1s ease-in-out;
-    }
-
-    .form-radio-label {
-        grid-area: radio-label;
-        font-size: calc(14px * var(--rfso, var(--bfso, 1)));
-        font-weight: 600;
-        line-height: 22.4px;
-        color: rgba(14, 19, 24, 1);
-    }
-
-    .form-radio-desc {
-        grid-area: radio-description;
-        font-size: calc(12px * var(--rfso, var(--bfso, 1)));
-        font-weight: 400;
-        color: rgba(14, 19, 24, 0.7);
-        margin: 0;
-    }
-
-    .form-buttons {
-        margin-top: 32px;
-        display: grid;
-        grid-gap: 8px;
-        grid-template-columns: auto auto;
-        justify-content: flex-end;
-    }
-
-    .tertiary-button {
-        border: 2px solid transparent;
-        box-sizing: border-box;
-        background-color: rgba(13, 18, 22, 0);
-        border-radius: 4px;
-        color: rgb(13, 18, 22);
-        cursor: pointer;
-        display: inline-flex;
-        height: 40px;
-        margin: 0;
-        max-width: 100%;
-        min-width: 80px;
-        width: 100%;
-        padding: 0 6px;
-        vertical-align: middle;
-        align-items: center;
-        justify-content: center;
-        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
-        font-weight: 400;
-        line-height: 1.6;
-        outline-offset: 2px;
-        transition: background-color 0.2s;
-    }
-    .tertiary-button:hover {
-        background-color: rgba(64, 87, 109, .07);
-    }
-    .tertiary-button:active {
-        background-color: rgba(57, 76, 96, .15);
-    }
-
-    .button {
-        border: 2px solid transparent;
-        box-sizing: border-box;
-        background-color: rgba(64, 87, 109, 0.07);
-        border-radius: 4px;
-        color: #0e1318;
-        cursor: pointer;
-        display: inline-flex;
-        height: 40px;
-        margin: 0;
-        max-width: 100%;
-        min-width: 80px;
-        width: 100%;
-        padding: 0 6px;
-        vertical-align: middle;
-        align-items: center;
-        justify-content: center;
-        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
-        font-weight: 400;
-        line-height: 1.6;
-        outline-offset: 2px;
-        transition: background-color 0.2s;
-    }
-    .button:hover {
-        background-color: rgba(57, 76, 96, .15);
-    }
-    .button:active {
-        background-color: rgba(53, 71, 90, .2);
-    }
-
-    .submit-button {
-        border: 2px solid transparent;
-        box-sizing: border-box;
-        background-color: #7d2ae8;
-        border-radius: 4px;
-        color: #ffffff;
-        cursor: pointer;
-        display: inline-flex;
-        height: 40px;
-        margin: 0;
-        max-width: 100%;
-        min-width: 80px;
-        width: 100%;
-        padding: 0 6px;
-        vertical-align: middle;
-        align-items: center;
-        justify-content: center;
-        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
-        font-weight: 400;
-        line-height: 1.6;
-        outline-offset: 4px;
-        transition: background-color 0.2s;
-    }
-    .submit-button:hover {
-        background-color: #8d39fa;
-    }
-    .submit-button:active {
-        background-color: #6718cf;
-    }
-
-    .button-text {
-        font-size: calc(14px * var(--rfso, var(--bfso, 1)));
-        display: inline-block;
-        max-width: 100%;
-        overflow: hidden;
-        padding: 0 8px;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        font-weight: 600;
-        transition: all 0.2s;
-    }
-
-    .a-link:visited {
-        color: rgba(14, 19, 24, 0.7)
-    }
-    .a-link {
-        text-decoration: underline;
-        color: rgba(14, 19, 24, 0.7)
-    }
-    .a-link:hover {
-        color: #7d2ae8;
-    }
-
-    @keyframes spin {
-        from {
-            transform: rotate(0turn);
-        }
-
-        to {
-            transform: rotate(1turn);
-        }
-    }
-
-    @supports selector(:focus-visible) {
-        .radio-button-input:focus-visible + .radio-button {
-            outline: auto;
-        }
-
-        .footer-pill-primary:focus-visible > .footer-pill-primary-background::after {
-            transform: translateX(110%);
-        }
-
-        .footer-pill-primary:focus-visible > .footer-pill-primary-background {
-            opacity: 1;
-        }
-
-        .footer-pill-primary:focus-visible > .footer-pill-primary-background .animation-container {
-            animation-play-state: running;
-        }
-    }
-
-    @supports not selector(:focus-visible) {
-        .radio-button-input:focus + .radio-button {
-            outline: auto;
-        }
-
-        .footer-pill-primary:focus > .footer-pill-primary-background::after {
-            transform: translateX(110%);
-        }
-
-        .footer-pill-primary:focus > .footer-pill-primary-background {
-            opacity: 1;
-        }
-
-        .footer-pill-primary:focus > .footer-pill-primary-background .animation-container {
-            animation-play-state: running;
-        }
-    }
-
-    /* stylelint-disable-next-line media-feature-name-disallowed-list */
-    @media only screen and (max-width: 600px) {
-        .modal-backdrop {
-            background-color: rgba(14, 19, 24, 0.45);
-            backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
-        }
-
-        .report-form-modal {
-            width: 100%;
-            position: fixed;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            border-radius: 8px 8px 0 0;
-            transform: translate3d(0, 33%, 0);
-        }
-
-        .report-form-modal.active {
-            transform: translate3d(0, 0, 0);
-        }
-
-        .form-content {
-            margin: 16px;
-        }
-
-        .form-buttons {
-            display: grid;
-            grid-gap: 8px;
-            grid-template-columns: 1fr;
-        }
-
-        .submit-button {
-            order: -1;
-        }
-
-        @supports (padding: env(safe-area-inset-bottom)) {
-            .footer-container {
-                padding: 6px 6px calc(6px + env(safe-area-inset-bottom)) 6px;
+        // Auto-fill patient data when HN is entered
+        document.getElementById('hn').addEventListener('blur', function() {
+            const hn = this.value.trim();
+            if (hn && patientData[hn]) {
+                const patient = patientData[hn];
+                document.getElementById('age').value = patient.age;
+                document.getElementById('admissionDate').value = patient.admissionDate;
+                document.getElementById('admissionSource').value = patient.admissionSource;
+                document.getElementById('admissionDetails').value = patient.admissionDetails || '';
+                document.getElementById('admissionWoundStatus').value = patient.admissionWoundStatus || '';
+                
+                // ซ่อนส่วนข้อมูลการรับสำหรับผู้ป่วยเดิม
+                hideAdmissionSection();
+                
+                // แสดงข้อความแจ้งเตือน
+                showPatientFoundMessage(patient);
+            } else {
+                // แสดงส่วนข้อมูลการรับสำหรับผู้ป่วยใหม่
+                showAdmissionSection();
             }
+        });
 
-            .form-content {
-                margin: 16px 16px calc(16px + env(safe-area-inset-bottom)) 16px;
+        // Show/Hide admission section functions
+        function hideAdmissionSection() {
+            const admissionSection = document.querySelector('.bg-blue-50');
+            if (admissionSection) {
+                admissionSection.style.display = 'none';
             }
         }
-    }
-    @media (prefers-reduced-motion) {
-        .report-form-modal, .report-form-modal.active {
-            transition-property: opacity, visibility;
-            transform: translate3d(0, calc(-100% + 8px), 0);
-        }
-        @media only screen and (max-width: 600px) {
-            .report-form-modal, .report-form-modal.active {
-                transform: translate3d(0, 0, 0);
+
+        function showAdmissionSection() {
+            const admissionSection = document.querySelector('.bg-blue-50');
+            if (admissionSection) {
+                admissionSection.style.display = 'block';
             }
         }
-        .animation-container {
-            animation-play-state: paused !important;
+
+        // Show patient found message
+        function showPatientFoundMessage(patient) {
+            const existingAlert = document.getElementById('patientFoundAlert');
+            if (existingAlert) {
+                existingAlert.remove();
+            }
+
+            const alert = document.createElement('div');
+            alert.id = 'patientFoundAlert';
+            alert.className = 'bg-blue-100 border border-blue-400 text-blue-700 px-4 py-3 rounded mb-4';
+            alert.innerHTML = `
+                <div class="flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span><strong>พบข้อมูลผู้ป่วย HN ${patient.hn}</strong> - ประเมิน Braden Score ใหม่ได้เลย (ข้อมูลการรับถูกซ่อนไว้)</span>
+                </div>
+            `;
+            
+            const form = document.getElementById('assessmentForm');
+            form.insertBefore(alert, form.firstChild);
+            
+            // Remove alert after 5 seconds
+            setTimeout(() => {
+                if (alert.parentNode) {
+                    alert.remove();
+                }
+            }, 5000);
         }
-        .footer-pill-primary-background::after {
-            transform: translateX(0);
-            opacity: 0;
-            transition: opacity 0.7s;
+
+        // Update statistics
+        function updateStatistics() {
+            const totalPatients = Object.keys(bedData).length;
+            const patientsWithUlcers = Object.values(bedData).filter(data => data.ulcerStatus !== 'none').length;
+            const highRiskPatients = Object.values(bedData).filter(data => data.bradenScore <= 17).length;
+            const lowRiskPatients = totalPatients - highRiskPatients;
+            
+            const ulcerRate = totalPatients > 0 ? ((patientsWithUlcers / totalPatients) * 100).toFixed(1) : 0;
+            const avgBradenScore = totalPatients > 0 ? 
+                (Object.values(bedData).reduce((sum, data) => sum + data.bradenScore, 0) / totalPatients).toFixed(1) : 0;
+
+            document.getElementById('totalPatients').textContent = totalPatients;
+            document.getElementById('patientsWithUlcers').textContent = patientsWithUlcers;
+            document.getElementById('highRiskPatients').textContent = highRiskPatients;
+            document.getElementById('lowRiskPatients').textContent = lowRiskPatients;
+            document.getElementById('ulcerRate').textContent = ulcerRate + '%';
+            document.getElementById('avgBradenScore').textContent = avgBradenScore;
         }
-        .footer-pill-primary-background > svg {
-            display: none;
+
+        // Care guidelines
+        const careGuidelines = {
+            prevention: {
+                title: "การป้องกันแผลกดทับ (Braden Score ≤ 17)",
+                guidelines: [
+                    "เปลี่ยนท่านอนทุก 2 ชั่วโมง",
+                    "ใช้ที่นอนลดแรงกด (pressure-relieving mattress)",
+                    "ตรวจสอบผิวหนังทุกวัน",
+                    "รักษาผิวหนังให้สะอาดและแห้ง",
+                    "ป้องกันการเสียดสีและแรงเฉือน",
+                    "ให้อาหารที่มีโปรตีนเพียงพอ",
+                    "ส่งเสริมการเคลื่อนไหวตามความสามารถ"
+                ]
+            },
+            stage1: {
+                title: "การดูแลแผลกดทับ Stage 1",
+                guidelines: [
+                    "หลีกเลี่ยงแรงกดบริเวณแผล",
+                    "เปลี่ยนท่านอนทุก 1-2 ชั่วโมง",
+                    "ทำความสะอาดด้วยน้ำเกลือ",
+                    "ใช้ moisturizer ป้องกันผิวแห้ง",
+                    "ประเมินแผลทุกวัน",
+                    "บันทึกขนาดและลักษณะแผล"
+                ]
+            },
+            stage2: {
+                title: "การดูแลแผลกดทับ Stage 2",
+                guidelines: [
+                    "ทำความสะอาดแผลด้วยน้ำเกลือ",
+                    "ใช้ hydrocolloid หรือ foam dressing",
+                    "เปลี่ยนผ้าปิดแผลตามความเหมาะสม",
+                    "หลีกเลี่ยงแรงกดบริเวณแผล",
+                    "ประเมินแผลทุกวัน",
+                    "ป้องกันการติดเชื้อ"
+                ]
+            },
+            stage3: {
+                title: "การดูแลแผลกดทับ Stage 3",
+                guidelines: [
+                    "ทำ wound debridement ตามความจำเป็น",
+                    "ใช้ alginate หรือ foam dressing",
+                    "รักษาสภาพแวดล้อมแผลให้ชื้น",
+                    "ป้องกันการติดเชื้อ",
+                    "ประเมินแผลทุกวัน",
+                    "ปรึกษาแพทย์เฉพาะทาง"
+                ]
+            },
+            stage4: {
+                title: "การดูแลแผลกดทับ Stage 4",
+                guidelines: [
+                    "ปรึกษาแพทย์เฉพาะทางทันที",
+                    "ทำ surgical debridement",
+                    "ใช้ negative pressure wound therapy",
+                    "ป้องกันการติดเชื้ออย่างเข้มงวด",
+                    "ประเมินแผลทุกวัน",
+                    "พิจารณาการผ่าตัดปิดแผล"
+                ]
+            }
+        };
+
+
+
+        // Calculate Braden Score
+        function calculateBradenScore() {
+            const sensory = parseInt(document.getElementById('sensoryPerception').value) || 0;
+            const moisture = parseInt(document.getElementById('moisture').value) || 0;
+            const activity = parseInt(document.getElementById('activity').value) || 0;
+            const mobility = parseInt(document.getElementById('mobility').value) || 0;
+            const nutrition = parseInt(document.getElementById('nutrition').value) || 0;
+            const friction = parseInt(document.getElementById('friction').value) || 0;
+            
+            const total = sensory + moisture + activity + mobility + nutrition + friction;
+            
+            document.getElementById('totalBradenScore').textContent = total;
+            document.getElementById('bradenScore').value = total;
+            
+            const riskLevelDiv = document.getElementById('riskLevel');
+            if (total === 0) {
+                riskLevelDiv.textContent = '';
+                riskLevelDiv.className = 'text-sm mt-1 font-medium';
+            } else if (total <= 9) {
+                riskLevelDiv.textContent = 'ความเสี่ยงสูงมาก (Very High Risk)';
+                riskLevelDiv.className = 'text-sm mt-1 font-medium text-red-600';
+            } else if (total <= 12) {
+                riskLevelDiv.textContent = 'ความเสี่ยงสูง (High Risk)';
+                riskLevelDiv.className = 'text-sm mt-1 font-medium text-red-500';
+            } else if (total <= 14) {
+                riskLevelDiv.textContent = 'ความเสี่ยงปานกลาง (Moderate Risk)';
+                riskLevelDiv.className = 'text-sm mt-1 font-medium text-orange-500';
+            } else if (total <= 17) {
+                riskLevelDiv.textContent = 'ความเสี่ยงเล็กน้อย (Mild Risk)';
+                riskLevelDiv.className = 'text-sm mt-1 font-medium text-yellow-600';
+            } else {
+                riskLevelDiv.textContent = 'ความเสี่ยงต่ำ (Low Risk)';
+                riskLevelDiv.className = 'text-sm mt-1 font-medium text-green-600';
+            }
         }
-    }
-</style><div class="footer-overflow-container" lang="th-TH">
-  <div class="footer-container">
-    <button id="report_button" class="footer-pill footer-pill-secondary" type="button">
-      ข้อกำหนดและการสนับสนุน
-    </button>
-    <a class="footer-pill footer-pill-primary footer-pill-link" target="_blank" href="https://www.canva.com/" aria-label="ดีไซน์ด้วย Canva">
-      <div class="footer-pill-primary-background">
-        <svg viewBox="20 20 55 55" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <radialgradient id="cyanSpotLarge" cx="0.5" cy="0.5" r="0.5" fx="0.8" fy="0.8" spreadMethod="pad">
-              <stop offset="0%" stop-color="rgb(0, 196, 204)" stop-opacity="1"></stop>
-              <stop offset="100%" stop-color="rgb(0, 196, 204)" stop-opacity="0"></stop>
-            </radialgradient>
-            <radialgradient id="cyanSpot" cx="0.5" cy="0.5" r="0.5" fx="0.2" fy="0.2" spreadMethod="pad">
-              <stop offset="0%" stop-color="rgb(0, 196, 204)" stop-opacity="0.75"></stop>
-              <stop offset="100%" stop-color="rgb(0, 196, 204)" stop-opacity="0"></stop>
-            </radialgradient>
-            <radialgradient id="purpleSpotLarge" cx="0.5" cy="0.5" r="0.5" fx="0.8" fy="0.8" spreadMethod="pad">
-              <stop offset="0%" stop-color="rgb(125, 42, 232)" stop-opacity="1"></stop>
-              <stop offset="100%" stop-color="rgb(125, 42, 232)" stop-opacity="0"></stop>
-            </radialgradient>
-            <radialgradient id="purpleSpot" cx="0.5" cy="0.5" r="0.5" fx="0.2" fy="0.2" spreadMethod="pad">
-              <stop offset="0%" stop-color="rgb(125, 42, 232)" stop-opacity="0.85"></stop>
-              <stop offset="100%" stop-color="rgb(125, 42, 232)" stop-opacity="0"></stop>
-            </radialgradient>
-          </defs>
-          <!-- Average the RGB values of the Cyan & Purple brand colors -> Blue rect background -->
-          <rect x="0" y="0" width="100" height="100" fill="rgb(62.5, 119, 218)"></rect>
-          <g class="animation-container">
-            <!-- Initial Rotation -->
-            <g transform="rotate(25)">
-              <!-- Large Spots -->
-              <g transform="rotate(0) scale(2) translate(-40, -40)">
-                <rect x="0" y="0" width="100" height="100" fill="url(#cyanSpotLarge)"></rect>
-              </g>
-              <g transform="rotate(180) scale(2) translate(-40, -40)">
-                <rect x="0" y="0" width="100" height="100" fill="url(#cyanSpotLarge)"></rect>
-              </g>
-              <g transform="rotate(90) scale(1.5) translate(-25, -25)">
-                <rect x="0" y="0" width="100" height="100" fill="url(#purpleSpotLarge)"></rect>
-              </g>
-              <g transform="rotate(270) scale(1.5) translate(-25, -25)">
-                <rect x="0" y="0" width="100" height="100" fill="url(#purpleSpotLarge)"></rect>
-              </g>
-              <!-- Small spots -->
-              <g transform="rotate(0) translate(-10, -10)">
-                <rect x="0" y="0" width="66" height="66" fill="url(#purpleSpot"></rect>
-              </g>
-              <g transform="rotate(180) translate(-10, -10)">
-                <rect x="0" y="0" width="66" height="66" fill="url(#purpleSpot"></rect>
-              </g>
-              <g transform="rotate(90) scale(1.2) translate(-10, -10)">
-                <rect x="0" y="0" width="66" height="66" fill="url(#cyanSpot)"></rect>
-              </g>
-              <g transform="rotate(270) scale(1.2) translate(-10, -10)">
-                <rect x="0" y="0" width="66" height="66" fill="url(#cyanSpot)"></rect>
-              </g>
-            </g>
-          </g>
-        </svg>
-      </div>
-      ดีไซน์ด้วย 
-      <span class="inline-icon-logo">
-        <svg viewBox="0 0 80 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M79.444 18.096c-.136 0-.26.088-.324.272-.82 2.34-1.928 3.732-2.84 3.732-.524 0-.736-.584-.736-1.5 0-2.292 1.372-7.152 2.064-9.368.08-.268.132-.508.132-.712 0-.644-.352-.96-1.224-.96-.94 0-1.952.368-2.936 2.092-.34-1.52-1.368-2.184-2.804-2.184-1.66 0-3.264 1.068-4.584 2.8-1.32 1.732-2.872 2.3-4.04 2.02.84-2.056 1.152-3.592 1.152-4.732 0-1.788-.884-2.868-2.312-2.868-2.172 0-3.424 2.072-3.424 4.252 0 1.684.764 3.416 2.444 4.256-1.408 3.184-3.464 6.064-4.244 6.064-1.008 0-1.304-4.932-1.248-8.46.036-2.024.204-2.128.204-2.74 0-.352-.228-.592-1.144-.592-2.136 0-2.796 1.808-2.896 3.884a10.233 10.233 0 01-.368 2.332c-.892 3.184-2.732 5.6-3.932 5.6-.556 0-.708-.556-.708-1.284 0-2.292 1.284-5.156 1.284-7.6 0-1.796-.788-2.932-2.272-2.932-1.748 0-4.06 2.08-6.248 5.976.72-2.984 1.016-5.872-1.116-5.872A2.886 2.886 0 0036 9.916a.752.752 0 00-.432.728c.204 3.176-2.56 11.312-5.18 11.312-.476 0-.708-.516-.708-1.348 0-2.296 1.368-7.144 2.056-9.364.088-.288.136-.536.136-.752 0-.608-.376-.92-1.228-.92-.936 0-1.952.356-2.932 2.08-.344-1.52-1.372-2.184-2.808-2.184-2.356 0-4.988 2.492-6.144 5.74-1.548 4.336-4.668 8.524-8.868 8.524-3.812 0-5.824-3.172-5.824-8.184C4.068 8.312 9.38 2.4 13.32 2.4c1.884 0 2.784 1.2 2.784 3.04 0 2.228-1.244 3.264-1.244 4.112 0 .26.216.516.644.516 1.712 0 3.728-2.012 3.728-4.756S17.004.56 13.064.56C6.552.56 0 7.112 0 15.508c0 6.68 3.296 10.708 8.996 10.708 3.888 0 7.284-3.024 9.116-6.552.208 2.924 1.536 4.452 3.56 4.452 1.8 0 3.256-1.072 4.368-2.956.428 1.972 1.564 2.936 3.04 2.936 1.692 0 3.108-1.072 4.456-3.064-.02 1.564.336 3.036 1.692 3.036.64 0 1.404-.148 1.54-.708 1.428-5.904 4.956-10.724 6.036-10.724.32 0 .408.308.408.672 0 1.604-1.132 4.892-1.132 6.992 0 2.268.964 3.768 2.956 3.768 2.208 0 4.452-2.704 5.948-6.656.468 3.692 1.48 6.672 3.064 6.672 1.944 0 5.396-4.092 7.488-8.424.82.104 2.052.076 3.236-.76-.504 1.276-.8 2.672-.8 4.068 0 4.02 1.92 5.148 3.572 5.148 1.796 0 3.252-1.072 4.368-2.956.368 1.7 1.308 2.932 3.036 2.932 2.704 0 5.052-2.764 5.052-5.032 0-.6-.256-.964-.556-.964zM23.32 21.888c-1.092 0-1.52-1.1-1.52-2.74 0-2.848 1.948-7.604 4.008-7.604.9 0 1.24 1.06 1.24 2.356 0 2.892-1.852 7.988-3.728 7.988zm37.404-8.5c-.652-.776-.888-1.832-.888-2.772 0-1.16.424-2.14.932-2.14s.664.5.664 1.196c0 1.164-.416 2.864-.708 3.716zm8.468 8.5c-1.092 0-1.52-1.264-1.52-2.74 0-2.748 1.948-7.604 4.024-7.604.9 0 1.22 1.052 1.22 2.356 0 2.892-1.82 7.988-3.724 7.988z" fill="#fff"></path>
-        </svg>
-      </span>
-      
-    </a>
-  </div>
-  <div id="modal_backdrop" class="modal-backdrop"></div>
-  <div id="modal" class="report-form-modal" role="dialog">
-    <div class="form-content" id="form_step_terms" style="display: none;" aria-labelledby="termsTitle" aria-describedby="termsDesc" tabindex="0">
-      <h2 id="termsTitle" class="form-title">ข้อกำหนดและการสนับสนุน</h2>
-      <p id="termsDesc" class="form-body">เว็บไซต์นี้สร้างด้วย Canva แต่คอนเทนต์จะเป็นคอนเทนต์ของผู้ใช้ซึ่งอยู่ภายใต้<a class="a-link" href="https://www.canva.com/policies/terms-of-use/" target="_blank">ข้อตกลงการใช้งาน</a>ของเรา หากคุณพบเห็นสิ่งใดที่ละเมิด<a class="a-link" href="https://www.canva.com/policies/acceptable-use-policy/" target="_blank">นโยบายการใช้งานที่ยอมรับได้</a>ของเรา โปรดรายงานให้ทีมตรวจสอบคอนเทนต์ของเราทราบ</p>
-      <div class="form-buttons">
-        <button id="form_close_initial" type="button" class="tertiary-button">
-          <span class="button-text">
-            ปิด
-          </span>
-        </button>
-        <button id="form_report" data-report-url="https://www.canva.com/help/report-content/?source=design&amp;link=" type="button" class="button">
-          <span class="button-text">
-            รายงาน
-          </span>
-        </button>
-      </div>
-    </div>
-    <div class="form-content" id="form_step_report_reason" style="display: none;" aria-labelledby="reportTitle" aria-describedby="reportDesc" tabindex="0">
-      <h2 id="reportTitle" class="form-title">รายงาน</h2>
-      <p id="reportDesc" class="form-body">การรายงานช่วยให้ Canva มั่นใจได้ว่าคอนเทนต์จะเหมาะสมและติดป้ายกำกับ 
- อย่างถูกต้อง</p>
-      <p class="form-body-bold">เหตุใดคุณจึงรายงานคอนเทนต์นี้</p>
-      <label class="form-radio-input" for="report_reason_0">
-        <input id="report_reason_0" class="radio-button-input" type="radio" name="report_reason" value="0" autocomplete="off" checked="">
-        <span class="radio-button"></span>
-        <span class="form-radio-label">
-          คอนเทนต์ไม่เหมาะสม
-        </span>
-      </label>
-      <label class="form-radio-input" for="report_reason_1">
-        <input id="report_reason_1" class="radio-button-input" type="radio" name="report_reason" value="1" autocomplete="off">
-        <span class="radio-button"></span>
-        <span class="form-radio-label">
-          คำพูด กิจกรรม หรือการเลือกปฏิบัติที่แสดงถึงความเกลียดชัง
-        </span>
-      </label>
-      <label class="form-radio-input" for="report_reason_2">
-        <input id="report_reason_2" class="radio-button-input" type="radio" name="report_reason" value="2" autocomplete="off">
-        <span class="radio-button"></span>
-        <span class="form-radio-label">
-          คอนเทนต์ที่ผิดกฎหมาย
-        </span>
-      </label>
-      <label class="form-radio-input" for="report_reason_3">
-        <input id="report_reason_3" class="radio-button-input" type="radio" name="report_reason" value="3" autocomplete="off">
-        <span class="radio-button"></span>
-        <span class="form-radio-label">
-          การหมิ่นประมาทหรือการคุกคาม
-        </span>
-      </label>
-      <label class="form-radio-input" for="report_reason_4">
-        <input id="report_reason_4" class="radio-button-input" type="radio" name="report_reason" value="4" autocomplete="off">
-        <span class="radio-button"></span>
-        <span class="form-radio-label">
-          การล่วงละเมิดทรัพย์สินทางปัญญา
-        </span>
-      </label>
-      <label class="form-radio-input" for="report_reason_5">
-        <input id="report_reason_5" class="radio-button-input" type="radio" name="report_reason" value="5" autocomplete="off">
-        <span class="radio-button"></span>
-        <span class="form-radio-label">
-          การบิดเบือนข้อมูล
-        </span>
-      </label>
-      <label class="form-radio-input" for="report_reason_6">
-        <input id="report_reason_6" class="radio-button-input" type="radio" name="report_reason" value="6" autocomplete="off">
-        <span class="radio-button"></span>
-        <span class="form-radio-label">
-          ฟิชชิ่ง
-        </span>
-      </label>
-      <label class="form-radio-input" for="report_reason_other">
-        <input id="report_reason_other" class="radio-button-input" type="radio" name="report_reason" value="7" autocomplete="off">
-        <span class="radio-button"></span>
-        <span class="form-radio-label">
-          อย่างอื่น
-        </span>
-      </label>
-      <div class="form-buttons">
-        <button id="form_cancel" type="button" class="button">
-          <span class="button-text">ยกเลิก</span>
-        </button>
-        <button id="form_submit_reason" type="button" class="submit-button">
-          <span class="button-text">ต่อไป</span>
-        </button>
-      </div>
-    </div>
-    <div class="form-content" id="form_step_report_ip" style="display: none;" aria-labelledby="ipTitle" aria-describedby="ipDesc" tabindex="0">
-      <h2 id="ipTitle" class="form-title">การล่วงละเมิดทรัพย์สินทางปัญญา</h2>
-      <p id="ipDesc" class="form-body">โปรดส่งหมายแจ้งการละเมิดไปที่ Canva โดยทำตามขั้นตอนใน<a class="a-link" href="https://www.canva.com/policies/intellectual-property-policy/" target="_blank">นโยบายทรัพย์สินทางปัญญา</a>ของเรา</p>
-      <div class="form-buttons">
-        <button id="form_go_back_ip" type="button" class="button">
-          <span class="button-text">ย้อนกลับ</span>
-        </button>
-        <button id="form_close_ip" type="button" class="submit-button">
-          <span class="button-text">ปิด</span>
-        </button>
-      </div>
-    </div>
-    <div class="form-content" id="form_step_report_other" style="display: none;" aria-labelledby="otherTitle" aria-describedby="otherDesc" tabindex="0">
-      <h2 id="otherTitle" class="form-title">อย่างอื่น</h2>
-      <p id="otherDesc" class="form-body">หากต้องการรายงานปัญหาอื่นๆ โปรดติดต่อ Canva ที่ <a class="a-link" href="mailto:privacy@canva.com" target="_blank">privacy@canva.com</a> และระบุ URL ของเว็บไซต์</p>
-      <div class="form-buttons">
-        <button id="form_go_back_other" type="button" class="button">
-          <span class="button-text">ย้อนกลับ</span>
-        </button>
-        <button id="form_close_other" type="button" class="submit-button">
-          <span class="button-text">ปิด</span>
-        </button>
-      </div>
-    </div>
-    <div class="form-content" id="form_step_success" style="display: none;" aria-labelledby="thanksTitle" aria-describedby="thanksDesc" tabindex="0">
-      <h2 id="thanksTitle" class="form-title">ขอบคุณ</h2>
-      <p id="thanksDesc" class="form-body">ขอขอบคุณที่ตั้งค่าสถานะคอนเทนต์นี้ว่าไม่เหมาะสม ทีมตรวจสอบคอนเทนต์ของเรากำลังดำเนินการ และจะทำการตรวจสอบโดยเร็วที่สุด</p>
-      <div class="form-buttons">
-        <button id="form_close" type="button" class="submit-button">
-          <span class="button-text">
-            ปิด
-          </span>
-        </button>
-      </div>
-    </div>
-  </div>
-</div></div></div></div></div></main></div></div><script nonce="">(function() {window['__canva_public_path__'] = '_assets\/'; window['bootstrap'] = JSON.parse('{"base":{"A?":"B","L":false,"N":false,"E":"a05efd416cf72d47681bcd5541f2fbf5e4b431e2","K":1754959242,"F":{"A?":"B"},"G":"CLIENT_FULL","I":"A","O":{"A?":"B"},"M":"/_online","U":[],"V":[],"a":{"K":"export_website","H":{}},"d":{"A":"wss://www.canva.com/_stream","B":{"F":"export_website"},"C":8388608},"b":{"A?":"H","C":{"a":"WEB"},"D":{"a":"WEB","c":"th-TH"},"E":{},"P":[],"Q":[],"R":false,"S":false}},"page":{"A":{"B":{"A?":"A","A":"TAGcbLa0hys","B":1},"C":{"A":1366.0,"B":768.0,"C":"D"},"Q":[],"R":[],"P":"th-TH","D":"PI Management","E":"","F":[],"G":{},"Y":{},"a":[],"b":[],"V":[],"W":[],"A":[{"A?":"j","Z":{"A?":"A","A":"TAGcbLa0hys","B":1},"a":"PBXhc0JxBdfdX1sT","R":false,"S":false,"U":false,"Q":{},"v":"B","t":[{"A?":"i","a":"PBYQ9bk1H4KYgLFV","R":false,"S":false,"U":false,"Q":{},"W":[],"X":[],"H":[],"L":{},"C":{"A":1366.0,"B":768.0,"C":"D"},"D":{"C":"#ffffff","D":0.0,"F":false,"J":false,"G":false,"H":false},"r":[],"E":[{"A?":"O","A":0.0,"B":0.0,"D":1366.0,"C":768.0,"E":0.0,"F":0.0,"BD":[],"BE":[],"BA":[],"BB":[],"Q":false,"S":false,"P":[],"5":{},"T":{},"W":{},"a":"_website-element-widget?version=v2&pageIndex=0&elementIndex=0&elementType=C&locale=th-TH","b":1366.0,"c":768.0}],"I":[]}],"u":[],"L":{}}],"I":[]},"Z":{"A?":"E","M":"th-TH","e":false,"f":{"B":"#ffffff","C":"#304254"},"g":[{"A?":"A","K":"PBXhc0JxBdfdX1sT","L":"/","e":{"A":true}}]},"B":[{"A":"YACgEZ1cb1Q","B":0,"C":"Arimo","D":[{"style":"BOLD_ITALICS","files":[{"url":"_assets/fonts/4de29305db46625343735e840e3d27aa.otf","format":"OTF","unicodeRanges":[],"sizeBytes":435028},{"url":"_assets/fonts/7fc2786f9023d4d812357cb787e9ad4b.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":237660},{"url":"_assets/fonts/1060345c54d396e76d73f1da7ee200bd.woff2","format":"WOFF2","unicodeRanges":[],"sizeBytes":203232}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":2048,"yMin":-771,"yMax":2109},"hhea":{"ascender":1854,"descender":-434,"lineGap":67},"os2":{"sTypoAscender":1491,"sTypoDescender":-431,"sTypoLineGap":307,"usWinAscent":1854,"usWinDescent":434,"fsSelection":33}}},{"style":"ITALICS","files":[{"url":"_assets/fonts/79d14bb61301a10c73c6cb293c29b309.otf","format":"OTF","unicodeRanges":[],"sizeBytes":440740},{"url":"_assets/fonts/d257a7100844bc3f98c9021168b6249e.woff2","format":"WOFF2","unicodeRanges":[],"sizeBytes":201132},{"url":"_assets/fonts/ac9b8a560f98d1757a4565a2419d33c3.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":240632}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":2048,"yMin":-621,"yMax":2077},"hhea":{"ascender":1854,"descender":-434,"lineGap":67},"os2":{"sTypoAscender":1491,"sTypoDescender":-425,"sTypoLineGap":307,"usWinAscent":1854,"usWinDescent":434,"fsSelection":1}}},{"style":"BOLD","files":[{"url":"_assets/fonts/9fd726aeae98b22824f0dc8947036e77.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":234696},{"url":"_assets/fonts/0bb563f2f60ffd4e62b64cb021c33776.otf","format":"OTF","unicodeRanges":[],"sizeBytes":438516},{"url":"_assets/fonts/98c4d2c0223fc8474641c77f923528e9.woff2","format":"WOFF2","unicodeRanges":[],"sizeBytes":194064}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":2048,"yMin":-771,"yMax":2116},"hhea":{"ascender":1854,"descender":-434,"lineGap":67},"os2":{"sTypoAscender":1491,"sTypoDescender":-431,"sTypoLineGap":307,"usWinAscent":1854,"usWinDescent":434,"fsSelection":32}}},{"style":"REGULAR","files":[{"url":"_assets/fonts/4ff8a742aa834e35f10ead140b735c45.woff","format":"WOFF","unicodeRanges":[],"sizeBytes":234380},{"url":"_assets/fonts/f8f199f09526f79e87644ed227e0f651.woff2","format":"WOFF2","unicodeRanges":[],"sizeBytes":194188},{"url":"_assets/fonts/daee28464eba92254cb149feea6599e3.otf","format":"OTF","unicodeRanges":[],"sizeBytes":436180}],"subsettedFiles":[],"scriptSubsetFiles":[],"metadata":{"head":{"unitsPerEm":2048,"yMin":-621,"yMax":2007},"hhea":{"ascender":1854,"descender":-434,"lineGap":67},"os2":{"sTypoAscender":1491,"sTypoDescender":-431,"sTypoLineGap":307,"usWinAscent":1854,"usWinDescent":434,"fsSelection":64}}}],"E":false}],"E":[],"F":[],"G":[],"H":[{"A":"https://www.canva-hosted-embed.com/codelet/bjm3m7xrsx7b9kaz","Q":false,"B":"Canva","D":1754959242170,"E":"\x3ciframe src=\\"https://bjm3m7xrsx7b9kaz.canva-hosted-embed.com/codelet/AAEAEGJqbTNtN3hyc3g3YjlrYXoAAAAAAZig3z-6WwFdrpqGRu1HU5WnReDF7tdOYk75Q1rQn4rS57aHFGE/\\" sandbox=\\"allow-same-origin allow-scripts allow-popups allow-forms\\" allowfullscreen=\\"true\\" width=\\"800\\" height=\\"450\\" style=\\"position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 8px;\\" allow=\\"fullscreen\\">\x3c/iframe>","F":1366,"G":768},{"A":"_website-element-widget?version=v2&pageIndex=0&elementIndex=0&elementType=C&locale=th-TH","Q":false,"B":"Canva","D":1754959242236,"E":"\x3ciframe src=\\"_website-element-widget?version=v2&pageIndex=0&elementIndex=0&elementType=C&locale=th-TH\\" width=\\"1366\\" height=\\"768\\" frameborder=\\"0\\" sandbox=\\"allow-same-origin allow-scripts allow-popups allow-forms allow-popups-to-escape-sandbox\\" style=\\"width:100%;height:100%;border:0\\">\x3c/iframe>","F":1366,"G":768}],"S":[],"K":{"B":"#ffffff","C":"#304254"},"Q":{"A":false,"B":true,"M":true},"R":false,"T":true,"W":false,"U":false,"V":false},"ui":{"N":false,"A":true,"B":"A","C":false,"D":false,"K":"A","I":true,"J":false,"P":false}}'); window['flags'] = JSON.parse('{"55dbebc8":true,"61af18e7":true,"bb5838dc":true,"e75f1ec":true,"b449fd3a":true,"21296728":true,"7321e74b":true,"7352b856":true,"978ce15d":150000.0,"bee5f7cb":true}'); window['cmsg'] = window['cmsg'] || { locale: "th-TH", strings: {} };})();</script><script crossorigin="anonymous" src="./PI Management_files/bc298cffa4d33d43.runtime.js.ดาวน์โหลด" defer="" integrity="sha512-6RnE+o1k+ofzqas2LlY7vpn6lI3Um/KSRsHLwsXl33qfqvwl2xL3jCBXip56eX1IcAorrkeIs6jFQOVfFiJdJA==" nonce=""></script><script crossorigin="anonymous" src="./PI Management_files/e633f538fad2b752.s4le6a.vendor(1).js.ดาวน์โหลด" defer="" integrity="sha512-bZiEERMDe++SiQCZbF/5Ly/YWka9ZvcIElJL1y5HitvWD/TT16drN6IIN5HT0xL8tzy4qoGabJD7XCOGTM+xBQ==" nonce=""></script><script crossorigin="anonymous" src="./PI Management_files/6dfedd5eb1e03f64.vendor.js.ดาวน์โหลด" defer="" integrity="sha512-2uR6jKOJQbtiI4rLh4sFZ/Yv3a6yX2hFFwgfLvRnow/bCWNKRxfQYk08/kh1gEcG74Y4A4ihbfMoSe9dNxHhoA==" nonce=""></script><script crossorigin="anonymous" src="./PI Management_files/8d51e94bb4a36f0b.strings.js.ดาวน์โหลด" integrity="sha512-LDVmCfL4QZih3C1E2QaNBMQ/X++DFEszkGVsH2xI80uSEqDV6Tg4bU3Bv6TlMCgVWlAUspUb/h4yG64l5jAUYw==" nonce=""></script><script crossorigin="anonymous" src="./PI Management_files/81fab970efce0947.th-TH.js.ดาวน์โหลด" integrity="sha512-7AZi7OstF1mGYo9fQVAIdJmcthOIRTk9vUtfI0seZmejZ244GlDvJ5F/SunHwPgtpleUnZec1soBZjU7Vp2i5Q==" nonce=""></script><script crossorigin="anonymous" src="./PI Management_files/1f09959ee9068430.js.ดาวน์โหลด" defer="" integrity="sha512-4ysXm/o8oenkkYRp/YUT/sxg/djhDZHKKcGirN9pkr3pWsg+mLBO+VYVj9nb4Si5pBG79nR11okJE4k7D1A+SQ==" nonce=""></script><div class="Q_Mxww"><div class="AdBbhQ"></div></div><div class="i7CgFw"></div><div class="BghEng"><div></div><div></div></div><div class="sOABQQ"></div><div class="sOABQQ"></div></body></html>
+
+        // Form handling
+        document.getElementById('assessmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const hn = document.getElementById('hn').value;
+            const bedNumber = document.getElementById('bedNumber').value;
+            const recordDate = document.getElementById('recordDate').value;
+            const age = document.getElementById('age').value;
+            const bradenScore = parseInt(document.getElementById('bradenScore').value);
+            const ulcerStatus = document.getElementById('ulcerStatus').value;
+            const ulcerLocation = document.getElementById('ulcerLocation').value;
+            const admissionDate = document.getElementById('admissionDate').value;
+            const admissionSource = document.getElementById('admissionSource').value;
+            const admissionDetails = document.getElementById('admissionDetails').value;
+            const admissionWoundStatus = document.getElementById('admissionWoundStatus').value;
+
+            if (bradenScore === 0) {
+                alert('กรุณาประเมิน Braden Score ให้ครบทุกหัวข้อ');
+                return;
+            }
+
+            // Store/Update patient data (ข้อมูลพื้นฐานที่ไม่เปลี่ยน)
+            if (!patientData[hn]) {
+                patientData[hn] = {
+                    hn,
+                    age,
+                    admissionDate,
+                    admissionSource,
+                    admissionDetails,
+                    admissionWoundStatus,
+                    firstRecordDate: recordDate
+                };
+            } else {
+                // อัพเดทเฉพาะข้อมูลที่อาจเปลี่ยนแปลง
+                patientData[hn].age = age; // อายุอาจเปลี่ยนถ้าข้ามปี
+            }
+
+            // Store current assessment data
+            const newRecord = {
+                hn, age, bradenScore, ulcerStatus, ulcerLocation, recordDate, bedNumber,
+                admissionDate, admissionSource, admissionDetails, admissionWoundStatus,
+                timestamp: new Date().toLocaleString('th-TH'),
+                id: Date.now() // unique ID for each record
+            };
+
+            bedData[bedNumber] = newRecord;
+            recordsHistory.push(newRecord); // เก็บประวัติ
+
+            // Update bed display
+            updateBedDisplay(bedNumber);
+            
+            // Update statistics
+            updateStatistics();
+            
+            // Show care guidelines
+            showCareGuidelines(bradenScore, ulcerStatus);
+            
+            // Clear form but keep HN for easy re-assessment
+            const currentHN = hn;
+            document.getElementById('assessmentForm').reset();
+            document.getElementById('hn').value = currentHN; // เก็บ HN ไว้
+            document.getElementById('recordDate').value = new Date().toISOString().split('T')[0];
+            document.getElementById('totalBradenScore').textContent = '0';
+            document.getElementById('riskLevel').textContent = '';
+            
+            // Remove any existing patient found alert
+            const existingAlert = document.getElementById('patientFoundAlert');
+            if (existingAlert) {
+                existingAlert.remove();
+            }
+            
+            alert('บันทึกข้อมูลเรียบร้อยแล้ว');
+        });
+
+        // Update bed display
+        function updateBedDisplay(bedNumber) {
+            const bedCard = document.querySelector(`[data-bed="${bedNumber}"]`);
+            const data = bedData[bedNumber];
+            const statusDiv = bedCard.querySelector('.bed-status');
+            const infoDiv = bedCard.querySelector('.bed-info');
+
+            let bgColor, borderColor, textColor, status;
+
+            if (data.ulcerStatus !== 'none') {
+                bgColor = 'bg-red-100';
+                borderColor = 'border-red-400';
+                textColor = 'text-red-800';
+                status = `มีแผลกดทับ ${data.ulcerStatus.toUpperCase()}`;
+            } else if (data.bradenScore <= 17) {
+                bgColor = 'bg-yellow-100';
+                borderColor = 'border-yellow-400';
+                textColor = 'text-yellow-800';
+                status = 'ความเสี่ยงสูง';
+            } else {
+                bgColor = 'bg-green-100';
+                borderColor = 'border-green-400';
+                textColor = 'text-green-800';
+                status = 'ความเสี่ยงต่ำ';
+            }
+
+            bedCard.className = `bed-card ${bgColor} border-2 ${borderColor} rounded-lg p-4 cursor-pointer hover:shadow-md transition-all`;
+            statusDiv.className = `bed-status text-sm mt-2 font-medium ${textColor}`;
+            statusDiv.textContent = status;
+            // แสดงเฉพาะสภาพแผลเมื่อแรกรับ (ถ้ามี)
+            const admissionWoundInfo = data.admissionWoundStatus ? 
+                `<div class="text-xs mt-1 text-orange-600">แผลเมื่อรับ: ${data.admissionWoundStatus.substring(0, 30)}${data.admissionWoundStatus.length > 30 ? '...' : ''}</div>` : '';
+            
+            infoDiv.innerHTML = `
+                <div>HN: ${data.hn} | Score: ${data.bradenScore}</div>
+                ${admissionWoundInfo}
+            `;
+        }
+
+        // Show care guidelines
+        function showCareGuidelines(bradenScore, ulcerStatus) {
+            const guidelinesDiv = document.getElementById('careGuidelines');
+            const contentDiv = document.getElementById('guidelinesContent');
+            
+            let guidelines;
+            if (ulcerStatus !== 'none') {
+                guidelines = careGuidelines[ulcerStatus] || careGuidelines.stage1;
+            } else if (bradenScore <= 17) {
+                guidelines = careGuidelines.prevention;
+            } else {
+                guidelinesDiv.classList.add('hidden');
+                return;
+            }
+
+            contentDiv.innerHTML = `
+                <h3 class="text-lg font-semibold text-gray-800 mb-3">${guidelines.title}</h3>
+                <ul class="space-y-2">
+                    ${guidelines.guidelines.map(item => `<li class="flex items-start"><span class="text-blue-500 mr-2">•</span><span>${item}</span></li>`).join('')}
+                </ul>
+            `;
+            
+            guidelinesDiv.classList.remove('hidden');
+        }
+
+        // Bed click handler
+        document.querySelectorAll('.bed-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const bedNumber = this.dataset.bed;
+                const data = bedData[bedNumber];
+                
+                if (data) {
+                    showBedModal(bedNumber, data);
+                } else {
+                    document.getElementById('bedNumber').value = bedNumber;
+                    document.getElementById('hn').focus();
+                }
+            });
+        });
+
+        // Show bed modal
+        function showBedModal(bedNumber, data) {
+            const modal = document.getElementById('bedModal');
+            const title = document.getElementById('modalTitle');
+            const content = document.getElementById('modalContent');
+            
+            title.textContent = `รายละเอียดเตียง ${bedNumber}`;
+            
+            let riskLevel = data.bradenScore <= 17 ? 'ความเสี่ยงสูง' : 'ความเสี่ยงต่ำ';
+            let ulcerText = data.ulcerStatus === 'none' ? 'ไม่มีแผลกดทับ' : `มีแผลกดทับ ${data.ulcerStatus.toUpperCase()}`;
+            
+
+            
+            // Admission information
+            let admissionHtml = '';
+            if (data.admissionDate || data.admissionSource) {
+                const admissionSourceText = data.admissionSource ? getAdmissionSourceText(data.admissionSource) : '';
+                const fullAdmissionSource = data.admissionDetails ? `${admissionSourceText} (${data.admissionDetails})` : admissionSourceText;
+                
+                admissionHtml = `
+                    <div class="mt-4 p-3 bg-blue-50 rounded-lg border border-blue-200">
+                        <h4 class="font-semibold text-blue-800 mb-2">ข้อมูลการรับผู้ป่วย</h4>
+                        ${data.admissionDate ? `<div class="text-sm"><strong>วันที่รับ:</strong> ${new Date(data.admissionDate).toLocaleDateString('th-TH', {year: 'numeric', month: 'long', day: 'numeric'})}</div>` : ''}
+                        ${fullAdmissionSource ? `<div class="text-sm"><strong>รับจาก:</strong> ${fullAdmissionSource}</div>` : ''}
+                        ${data.admissionWoundStatus ? `<div class="text-sm mt-2"><strong>สภาพแผลเมื่อรับ:</strong><br>${data.admissionWoundStatus}</div>` : ''}
+                    </div>
+                `;
+            }
+
+            content.innerHTML = `
+                <div class="space-y-3">
+                    <div><strong>HN:</strong> ${data.hn}</div>
+                    <div><strong>อายุ:</strong> ${data.age} ปี</div>
+                    <div><strong>วันที่บันทึก:</strong> ${new Date(data.recordDate).toLocaleDateString('th-TH', {year: 'numeric', month: 'long', day: 'numeric'})}</div>
+                    <div><strong>Braden Score:</strong> ${data.bradenScore} (${riskLevel})</div>
+                    <div><strong>สถานะแผล:</strong> ${ulcerText}</div>
+                    ${data.ulcerLocation ? `<div><strong>ตำแหน่งแผล:</strong> ${data.ulcerLocation}</div>` : ''}
+                    ${admissionHtml}
+                    <div><strong>บันทึกเมื่อ:</strong> ${data.timestamp}</div>
+                    <div class="pt-3">
+                        <button onclick="editBed('${bedNumber}')" class="px-4 py-2 bg-teal-600 text-white rounded-md hover:bg-teal-700 mr-2 shadow-sm">แก้ไข</button>
+                        <button onclick="deleteBed('${bedNumber}')" class="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700">ลบข้อมูล</button>
+                    </div>
+                </div>
+            `;
+            
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        // Helper function for admission source text conversion
+        function getAdmissionSourceText(value) {
+            const texts = {
+                'new_admission': 'รับใหม่',
+                'transfer': 'รับย้าย',
+                'refer': 'รับ Refer'
+            };
+            return texts[value] || value;
+        }
+
+
+
+        // Edit bed data
+        function editBed(bedNumber) {
+            const data = bedData[bedNumber];
+            document.getElementById('hn').value = data.hn;
+            document.getElementById('bedNumber').value = bedNumber;
+            document.getElementById('recordDate').value = data.recordDate;
+            document.getElementById('age').value = data.age;
+            document.getElementById('bradenScore').value = data.bradenScore;
+            document.getElementById('ulcerStatus').value = data.ulcerStatus;
+            document.getElementById('ulcerLocation').value = data.ulcerLocation || '';
+            
+            // Load admission data
+            document.getElementById('admissionDate').value = data.admissionDate || '';
+            document.getElementById('admissionSource').value = data.admissionSource || '';
+            document.getElementById('admissionDetails').value = data.admissionDetails || '';
+            document.getElementById('admissionWoundStatus').value = data.admissionWoundStatus || '';
+            
+            // ซ่อนส่วนข้อมูลการรับถ้าเป็นผู้ป่วยเดิม
+            if (patientData[data.hn]) {
+                hideAdmissionSection();
+            } else {
+                showAdmissionSection();
+            }
+            
+            document.getElementById('bedModal').classList.add('hidden');
+            document.getElementById('bedModal').classList.remove('flex');
+        }
+
+        // Delete bed data
+        function deleteBed(bedNumber) {
+            if (confirm('ต้องการลบข้อมูลเตียงนี้หรือไม่?')) {
+                delete bedData[bedNumber];
+                
+                const bedCard = document.querySelector(`[data-bed="${bedNumber}"]`);
+                bedCard.className = 'bed-card bg-gray-100 border-2 border-gray-300 rounded-lg p-4 cursor-pointer hover:shadow-md transition-all';
+                bedCard.querySelector('.bed-status').textContent = 'ไม่มีข้อมูล';
+                bedCard.querySelector('.bed-status').className = 'bed-status text-sm mt-2';
+                bedCard.querySelector('.bed-info').textContent = '';
+                
+                // Update statistics
+                updateStatistics();
+                
+                document.getElementById('bedModal').classList.add('hidden');
+                document.getElementById('bedModal').classList.remove('flex');
+            }
+        }
+
+        // Modal close handlers
+        document.getElementById('closeModal').addEventListener('click', function() {
+            document.getElementById('bedModal').classList.add('hidden');
+            document.getElementById('bedModal').classList.remove('flex');
+        });
+
+        document.getElementById('bedModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.classList.add('hidden');
+                this.classList.remove('flex');
+            }
+        });
+
+        // Clear assessment only (keep patient data)
+        document.getElementById('clearAssessment').addEventListener('click', function() {
+            // Clear only Braden Score assessment and wound status
+            document.getElementById('sensoryPerception').value = '';
+            document.getElementById('moisture').value = '';
+            document.getElementById('activity').value = '';
+            document.getElementById('mobility').value = '';
+            document.getElementById('nutrition').value = '';
+            document.getElementById('friction').value = '';
+            document.getElementById('ulcerStatus').value = 'none';
+            document.getElementById('ulcerLocation').value = '';
+            document.getElementById('bedNumber').value = '';
+            
+            document.getElementById('totalBradenScore').textContent = '0';
+            document.getElementById('bradenScore').value = '';
+            document.getElementById('riskLevel').textContent = '';
+            document.getElementById('careGuidelines').classList.add('hidden');
+        });
+
+        // Clear form
+        document.getElementById('clearForm').addEventListener('click', function() {
+            if (confirm('ต้องการล้างข้อมูลทั้งหมดหรือไม่? (HN จะถูกล้างด้วย)')) {
+                document.getElementById('assessmentForm').reset();
+                document.getElementById('recordDate').value = new Date().toISOString().split('T')[0];
+                document.getElementById('totalBradenScore').textContent = '0';
+                document.getElementById('riskLevel').textContent = '';
+                document.getElementById('careGuidelines').classList.add('hidden');
+                
+                // Set default admission date to today
+                document.getElementById('admissionDate').value = new Date().toISOString().split('T')[0];
+                
+                // แสดงส่วนข้อมูลการรับกลับมา
+                showAdmissionSection();
+                
+                // Remove any existing patient found alert
+                const existingAlert = document.getElementById('patientFoundAlert');
+                if (existingAlert) {
+                    existingAlert.remove();
+                }
+            }
+        });
+
+        // View records history
+        document.getElementById('viewRecordsBtn').addEventListener('click', function() {
+            showRecordsModal();
+        });
+
+        // Export data
+        document.getElementById('exportDataBtn').addEventListener('click', function() {
+            exportToCSV();
+        });
+
+        // Show records modal
+        function showRecordsModal() {
+            const modal = document.getElementById('recordsModal');
+            const content = document.getElementById('recordsContent');
+            
+            if (recordsHistory.length === 0) {
+                content.innerHTML = '<div class="text-center text-gray-500 py-8">ไม่มีข้อมูลการบันทึก</div>';
+            } else {
+                const sortedRecords = recordsHistory.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+                
+                content.innerHTML = `
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white border border-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">วันที่บันทึก</th>
+                                    <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">เตียง</th>
+                                    <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">HN</th>
+                                    <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">วันที่รับ</th>
+                                    <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">ประเภทการรับ</th>
+                                    <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">Braden Score</th>
+                                    <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">สถานะแผล</th>
+                                    <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase">เวลาบันทึก</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200">
+                                ${sortedRecords.map(record => `
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="px-4 py-2 text-sm">${new Date(record.recordDate).toLocaleDateString('th-TH')}</td>
+                                        <td class="px-4 py-2 text-sm">${record.bedNumber}</td>
+                                        <td class="px-4 py-2 text-sm font-medium">${record.hn}</td>
+                                        <td class="px-4 py-2 text-sm">${record.admissionDate ? new Date(record.admissionDate).toLocaleDateString('th-TH') : '-'}</td>
+                                        <td class="px-4 py-2 text-sm">${record.admissionSource ? getAdmissionSourceText(record.admissionSource) : '-'}</td>
+                                        <td class="px-4 py-2 text-sm">
+                                            <span class="px-2 py-1 text-xs rounded-full ${record.bradenScore <= 17 ? 'bg-red-100 text-red-800' : 'bg-green-100 text-green-800'}">
+                                                ${record.bradenScore}
+                                            </span>
+                                        </td>
+                                        <td class="px-4 py-2 text-sm">
+                                            <span class="px-2 py-1 text-xs rounded-full ${record.ulcerStatus !== 'none' ? 'bg-red-100 text-red-800' : 'bg-green-100 text-green-800'}">
+                                                ${record.ulcerStatus === 'none' ? 'ไม่มีแผล' : record.ulcerStatus.toUpperCase()}
+                                            </span>
+                                        </td>
+                                        <td class="px-4 py-2 text-sm text-gray-500">${record.timestamp}</td>
+                                    </tr>
+                                `).join('')}
+                            </tbody>
+                        </table>
+                    </div>
+                `;
+            }
+            
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        // Export to CSV
+        function exportToCSV() {
+            if (recordsHistory.length === 0) {
+                alert('ไม่มีข้อมูลสำหรับส่งออก');
+                return;
+            }
+
+            const headers = ['วันที่บันทึก', 'เตียง', 'HN', 'อายุ', 'วันที่รับ', 'ประเภทการรับ', 'รายละเอียดแหล่งที่มา', 'สภาพแผลเมื่อรับ', 'Braden Score', 'สถานะแผล', 'ตำแหน่งแผล', 'เวลาบันทึก'];
+            
+            // Escape CSV values properly
+            function escapeCSV(value) {
+                if (value === null || value === undefined) return '';
+                const str = String(value);
+                if (str.includes(',') || str.includes('"') || str.includes('\n')) {
+                    return '"' + str.replace(/"/g, '""') + '"';
+                }
+                return str;
+            }
+            
+            const csvRows = [
+                headers.map(escapeCSV).join(','),
+                ...recordsHistory.map(record => [
+                    new Date(record.recordDate).toLocaleDateString('th-TH'),
+                    record.bedNumber,
+                    record.hn,
+                    record.age,
+                    record.admissionDate ? new Date(record.admissionDate).toLocaleDateString('th-TH') : '-',
+                    record.admissionSource ? getAdmissionSourceText(record.admissionSource) : '-',
+                    record.admissionDetails || '-',
+                    record.admissionWoundStatus || '-',
+                    record.bradenScore,
+                    record.ulcerStatus === 'none' ? 'ไม่มีแผล' : record.ulcerStatus.toUpperCase(),
+                    record.ulcerLocation || '-',
+                    record.timestamp
+                ].map(escapeCSV).join(','))
+            ];
+            
+            const csvContent = csvRows.join('\n');
+            const blob = new Blob(['\ufeff' + csvContent], { type: 'text/csv;charset=utf-8;' });
+            
+            // Create download link
+            const link = document.createElement('a');
+            if (link.download !== undefined) {
+                const url = URL.createObjectURL(blob);
+                link.setAttribute('href', url);
+                link.setAttribute('download', `ICU_PI_Records_${new Date().toISOString().split('T')[0]}.csv`);
+                link.style.visibility = 'hidden';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                URL.revokeObjectURL(url);
+                
+                alert('ส่งออกข้อมูลเรียบร้อยแล้ว!');
+            } else {
+                alert('เบราว์เซอร์ไม่รองรับการดาวน์โหลดไฟล์');
+            }
+        }
+
+        // Close records modal
+        document.getElementById('closeRecordsModal').addEventListener('click', function() {
+            document.getElementById('recordsModal').classList.add('hidden');
+            document.getElementById('recordsModal').classList.remove('flex');
+        });
+
+        document.getElementById('recordsModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.classList.add('hidden');
+                this.classList.remove('flex');
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96fd690557447dc3',t:'MTc1NTMxMDM4My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

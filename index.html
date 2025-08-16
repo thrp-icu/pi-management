@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <html lang="th">
 <head>
@@ -474,6 +475,102 @@
         let patientData = {}; // เก็บข้อมูลผู้ป่วยตาม HN
         let recordsHistory = []; // เก็บประวัติการบันทึกทั้งหมด
 
+        /*
+         * ---------------------------------------------------------------------------
+         * API helper functions
+         *
+         * These asynchronous helpers wrap the Google Apps Script web app.  The
+         * "action" parameter selects which CRUD operation to perform.  For read
+         * operations a simple GET request is used; create, update and delete
+         * operations are issued as POST with a JSON payload.  Errors are logged
+         * but do not interrupt UI interactions.
+         */
+        async function callApi(action, payload) {
+            try {
+                // Read (list all records) uses GET
+                if (action === 'read') {
+                    const response = await fetch(`${API_URL}?action=read`);
+                    return await response.json();
+                }
+                // Create, update or delete use POST with JSON body
+                const response = await fetch(`${API_URL}?action=${action}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload || {})
+                });
+                return await response.json();
+            } catch (error) {
+                console.error('API error', error);
+                return null;
+            }
+        }
+
+        // Load all records from the server and populate local state objects.  Once
+        // fetched, it rebuilds bedData, patientData and recordsHistory then
+        // triggers UI updates.  This function should be called on page load to
+        // restore previously saved data.
+        async function fetchRecordsFromServer() {
+            const records = await callApi('read');
+            if (records && Array.isArray(records)) {
+                // Reset current in-memory stores
+                bedData = {};
+                patientData = {};
+                recordsHistory = [];
+                records.forEach(rec => {
+                    // Coerce numeric fields
+                    rec.bradenScore = parseInt(rec.bradenScore, 10);
+                    rec.age = parseInt(rec.age, 10);
+                    // Update bedData with the latest record per bed
+                    bedData[rec.bedNumber] = rec;
+                    // Build patient lookup for auto-fill
+                    if (!patientData[rec.hn]) {
+                        patientData[rec.hn] = {
+                            hn: rec.hn,
+                            age: rec.age,
+                            admissionDate: rec.admissionDate,
+                            admissionSource: rec.admissionSource,
+                            admissionDetails: rec.admissionDetails,
+                            admissionWoundStatus: rec.admissionWoundStatus,
+                            firstRecordDate: rec.recordDate
+                        };
+                    }
+                    recordsHistory.push(rec);
+                });
+                // Update the bed cards and statistics based on the loaded data
+                Object.keys(bedData).forEach(bed => {
+                    updateBedDisplay(bed);
+                });
+                updateStatistics();
+            }
+        }
+
+        // Persist a record to the server.  Determines whether to perform a
+        // create or update by inspecting existing recordsHistory.  Returns the
+        // server's response but does not block UI updates.
+        async function saveRecordToServer(record) {
+            const exists = recordsHistory.some(r => String(r.id) === String(record.id));
+            const action = exists ? 'update' : 'create';
+            return await callApi(action, record);
+        }
+
+        // Request deletion of a record from the server by its unique id
+        async function deleteRecordFromServer(id) {
+            return await callApi('delete', { id });
+        }
+
+        // -----------------------------------------------------------------------------
+        // Google Apps Script API configuration
+        // Do not modify layout/UI; this section adds support for CRUD operations
+        // against an external Google Apps Script web app.  The constant below should
+        // point to the deployed web app URL provided by the user.  Requests will
+        // be issued to this endpoint with an "action" query parameter to
+        // differentiate between create, read, update and delete operations.
+        const API_URL = "https://script.google.com/macros/s/AKfycbz215kGxb6VMSGkDZcNMK029laTobT5O73oYTHsueaShwtUxpoKLbTk3ROhUgJC6iaG/exec";
+
+        // When editing an existing record, this variable holds the record's unique
+        // identifier (id).  New records will generate a fresh timestamp-based id.
+        let currentEditId = null;
+
         // Set default date to today
         document.getElementById('recordDate').value = new Date().toISOString().split('T')[0];
         document.getElementById('admissionDate').value = new Date().toISOString().split('T')[0];
@@ -701,24 +798,45 @@
 
             // Store current assessment data
             const newRecord = {
-                hn, age, bradenScore, ulcerStatus, ulcerLocation, recordDate, bedNumber,
-                admissionDate, admissionSource, admissionDetails, admissionWoundStatus,
+                hn,
+                age,
+                bradenScore,
+                ulcerStatus,
+                ulcerLocation,
+                recordDate,
+                bedNumber,
+                admissionDate,
+                admissionSource,
+                admissionDetails,
+                admissionWoundStatus,
                 timestamp: new Date().toLocaleString('th-TH'),
-                id: Date.now() // unique ID for each record
+                // Use existing id when editing, otherwise generate a new id
+                id: currentEditId || Date.now()
             };
 
+            // Update local stores
             bedData[bedNumber] = newRecord;
-            recordsHistory.push(newRecord); // เก็บประวัติ
+            // Replace existing history record if it exists
+            const existingIndex = recordsHistory.findIndex(r => String(r.id) === String(newRecord.id));
+            if (existingIndex > -1) {
+                recordsHistory[existingIndex] = newRecord;
+            } else {
+                recordsHistory.push(newRecord);
+            }
 
-            // Update bed display
+            // Persist to server asynchronously (create or update)
+            saveRecordToServer(newRecord);
+
+            // Reset edit state
+            currentEditId = null;
+
+            // Update bed display and statistics immediately
             updateBedDisplay(bedNumber);
-            
-            // Update statistics
             updateStatistics();
-            
+
             // Show care guidelines
             showCareGuidelines(bradenScore, ulcerStatus);
-            
+
             // Clear form but keep HN for easy re-assessment
             const currentHN = hn;
             document.getElementById('assessmentForm').reset();
@@ -726,13 +844,13 @@
             document.getElementById('recordDate').value = new Date().toISOString().split('T')[0];
             document.getElementById('totalBradenScore').textContent = '0';
             document.getElementById('riskLevel').textContent = '';
-            
+
             // Remove any existing patient found alert
             const existingAlert = document.getElementById('patientFoundAlert');
             if (existingAlert) {
                 existingAlert.remove();
             }
-            
+
             alert('บันทึกข้อมูลเรียบร้อยแล้ว');
         });
 
@@ -880,6 +998,9 @@
         // Edit bed data
         function editBed(bedNumber) {
             const data = bedData[bedNumber];
+
+            // Set the current edit id so that form submission will perform an update
+            currentEditId = data.id;
             document.getElementById('hn').value = data.hn;
             document.getElementById('bedNumber').value = bedNumber;
             document.getElementById('recordDate').value = data.recordDate;
@@ -908,6 +1029,8 @@
         // Delete bed data
         function deleteBed(bedNumber) {
             if (confirm('ต้องการลบข้อมูลเตียงนี้หรือไม่?')) {
+                // Preserve record id for deletion
+                const recordId = bedData[bedNumber].id;
                 delete bedData[bedNumber];
                 
                 const bedCard = document.querySelector(`[data-bed="${bedNumber}"]`);
@@ -921,6 +1044,15 @@
                 
                 document.getElementById('bedModal').classList.add('hidden');
                 document.getElementById('bedModal').classList.remove('flex');
+
+                // Remove from recordsHistory
+                const idx = recordsHistory.findIndex(r => String(r.id) === String(recordId));
+                if (idx > -1) {
+                    recordsHistory.splice(idx, 1);
+                }
+
+                // Asynchronously delete from server
+                deleteRecordFromServer(recordId);
             }
         }
 
@@ -1114,6 +1246,14 @@
                 this.classList.add('hidden');
                 this.classList.remove('flex');
             }
+        });
+
+        // -------------------------------------------------------------------------
+        // Initialize data on page load by reading from the Google Apps Script API.
+        // This call populates the bed cards and statistics with any previously
+        // stored records.  It runs once after the DOM is ready.
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchRecordsFromServer();
         });
     </script>
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96fd690557447dc3',t:'MTc1NTMxMDM4My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>

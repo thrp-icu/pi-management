@@ -495,7 +495,7 @@
                 // Create, update or delete use POST with JSON body
                 const response = await fetch(`${API_URL}?action=${action}`, {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
+                    headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
                     body: JSON.stringify(payload || {})
                 });
                 return await response.json();
